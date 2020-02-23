@@ -54,25 +54,16 @@ public class PlayerDimensionShifting : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Platform_Red") || collision.collider.CompareTag("Platform_Green") || collision.collider.CompareTag("Platform_Blue"))
+        if (collision.collider.CompareTag("Platform_Red") || collision.collider.CompareTag("Platform_Blue"))
         {
             colorCollision = true;
             Debug.Log("Touching platform");
         }
-        if (collision.collider.CompareTag("Enemy_Red") || collision.collider.CompareTag("Enemy_Blue") || collision.collider.CompareTag("Enemy_Green"))
-        {
-
-
-        }
+  
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.collider.CompareTag("Enemy_Red") || collision.collider.CompareTag("Enemy_Blue") || collision.collider.CompareTag("Enemy_Green"))
-        {
-
-
-        }
         isGrounded = true;
     }
     private void OnCollisionExit(Collision collision)
@@ -82,14 +73,11 @@ public class PlayerDimensionShifting : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Platform_Red") || other.CompareTag("Platform_Green") || other.CompareTag("Platform_Blue"))
+        if (other.CompareTag("Platform_Red") || other.CompareTag("Platform_Blue"))
         {
             colorCollision = true;
         }
-        else if (other.CompareTag("LevelEnd"))
-        {
-            Invoke("ResetWin", .5f);
-        }
+       
     }
 
     private void OnTriggerExit(Collider other)
