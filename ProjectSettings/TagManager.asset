@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ReflectionField
+  - Player_Red
+  - Player_Blue
+  - Platform_Red
+  - Platform_Blue
+  - ReflectionField_Red
+  - ReflectionField_Blue
   layers:
   - Default
   - TransparentFX
