@@ -70,10 +70,10 @@ public class PlayerInput : MonoBehaviour
             moveDirection.x = Input.GetAxis("Horizontal") * -1 * speed;
             moveDirection.z = Input.GetAxis("Vertical") * -1 * speed;
             moveDirection = transform.TransformDirection(moveDirection);// Then reassign the current transform to the Vector 3.
-       
-
+                                 
         }
-        
+
+      //  if (moveDirection != Vector3.zero) transform.rotation = Quaternion.LookRotation(moveDirection);
 
 
 
