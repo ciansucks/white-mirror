@@ -7,7 +7,6 @@ public class PlayerDimensionShifting : MonoBehaviour
 {
 
     public Image PlatformBar;
-
     public UnityEvent ColorSwapEvent;
     public string playerColor;
     private bool isGrounded, isJumping, colorPress, colorCollision;
@@ -28,7 +27,7 @@ public class PlayerDimensionShifting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        colorPress = Input.GetKeyDown(KeyCode.G);
+        colorPress = Input.GetButtonDown("DimSwitch");     
         if (colorPress && !colorCollision)
             SwitchColor();
     }
@@ -77,7 +76,6 @@ public class PlayerDimensionShifting : MonoBehaviour
         {
             colorCollision = true;
         }
-       
     }
 
     private void OnTriggerExit(Collider other)

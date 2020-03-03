@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class PlatformCollisions : MonoBehaviour
 {
-    enum PlatformColor { Platform_Red, Platform_Blue };
-
     private GameObject[] RedPlat;
     private GameObject[] BluePlat;
     /// <summary>
@@ -33,8 +31,6 @@ public class PlatformCollisions : MonoBehaviour
             bTrig = false;
 
 
-
-
         //if player passes through red, set red as tangible
         if (RedPlat[0].GetComponent<BoxCollider>().isTrigger != rTrig)
         {
@@ -44,11 +40,12 @@ public class PlatformCollisions : MonoBehaviour
                 Renderer r = o.GetComponent<Renderer>();
                 Color newColor = r.material.color;
                 if (rTrig)
-                    newColor.a = .0f;
+                    newColor.a = .15f;
                 else
                     newColor.a = .5f;
 
-                r.material.color = newColor;
+                r.material.SetColor("_BaseColor", newColor);
+
             }
 
         }
@@ -61,11 +58,11 @@ public class PlatformCollisions : MonoBehaviour
                 Renderer r = o.GetComponent<Renderer>();
                 Color newColor = r.material.color;
                 if (bTrig)
-                    newColor.a = .0f;
+                    newColor.a = .15f;
                 else
                     newColor.a = .5f;
 
-                r.material.color = newColor;
+                r.material.SetColor("_BaseColor", newColor);
             }
         }
 
