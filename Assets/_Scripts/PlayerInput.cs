@@ -43,7 +43,7 @@ public class PlayerInput : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         colorSwapScript = this.GetComponent<PlayerDimensionShifting>();
 
@@ -67,14 +67,17 @@ public class PlayerInput : MonoBehaviour
         else if (characterController.isGrounded == false) // Here I independently allow for both X and Z movement. 
 
         {
-            moveDirection.x = Input.GetAxis("Horizontal") * -1 * speed;
-            moveDirection.z = Input.GetAxis("Vertical") * -1 * speed;
-            moveDirection = transform.TransformDirection(moveDirection);// Then reassign the current transform to the Vector 3.
-                                 
+            moveDirection.x = Input.GetAxis("Horizontal") * speed;
+            moveDirection.z = Input.GetAxis("Vertical") * speed;
+            Debug.Log(moveDirection);
         }
 
-        //if (moveDirection != Vector3.zero) transform.rotation = Quaternion.LookRotation(moveDirection);
-
+        if (moveDirection != Vector3.zero)
+        {
+            Vector3 tempMoveDirection = moveDirection;
+            tempMoveDirection.y = 0.0f;
+            transform.rotation = Quaternion.LookRotation(tempMoveDirection * -1.0f);
+        }
 
 
 
@@ -113,6 +116,8 @@ public class PlayerInput : MonoBehaviour
 
     void reflect(GameObject reflectionField)
     {
+
+        
         if (this.tag == "Player_Blue" && reflectionPlane_Blue != null)
         {
 
