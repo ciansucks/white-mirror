@@ -8,11 +8,13 @@ public class ShowText : MonoBehaviour
 {
     public TextAsset file;
     public GameObject player;
-    public Canvas GuiCanvas;
+    public Canvas GuiCanvas, PlayerCanvas;
     private bool isReading;
     // Start is called before the first frame update
     void Start()
     {
+        GuiCanvas.enabled = false;
+
         isReading = false;
     }
 
@@ -23,6 +25,7 @@ public class ShowText : MonoBehaviour
         {
             player.SetActive(true);
             GuiCanvas.enabled = false;
+            PlayerCanvas.enabled = true;
             isReading = false;
         }
     }
@@ -32,6 +35,7 @@ public class ShowText : MonoBehaviour
         {
             //show GUI bg and update text depending on what text log you're pulling up
             GuiCanvas.enabled = true;
+            PlayerCanvas.enabled = false;
             GuiCanvas.GetComponentInChildren<Text>().text = file.text;
             player.SetActive(false); //disable player and movement until Cancel is hit
             isReading = true;
