@@ -73,7 +73,7 @@ public class PlayerInput : MonoBehaviour
                                  
         }
 
-      //  if (moveDirection != Vector3.zero) transform.rotation = Quaternion.LookRotation(moveDirection);
+        //if (moveDirection != Vector3.zero) transform.rotation = Quaternion.LookRotation(moveDirection);
 
 
 
