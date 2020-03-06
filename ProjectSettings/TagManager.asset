@@ -12,6 +12,7 @@ TagManager:
   - ReflectionField_Red
   - ReflectionField_Blue
   - Readable
+  - Moving_Platform
   layers:
   - Default
   - TransparentFX

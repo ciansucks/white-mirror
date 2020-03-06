@@ -170,6 +170,12 @@ public class PlayerInput : MonoBehaviour
      //       Debug.Log("Red reflection plane: " + reflectionPlane_Red);
 
         }
+
+        if (collision.gameObject.tag == "Moving_Platform")
+        {
+                //This will make the player a child of the Obstacle
+             this.transform.parent = collision.gameObject.transform; //Change "myPlayer" to your player
+        }
     }
 
     private void OnTriggerExit(Collider collision)
@@ -186,6 +192,10 @@ public class PlayerInput : MonoBehaviour
             ghost.SetActive(false);
             reflectionPlane_Red = null;
             
+        }
+        if(collision.gameObject.tag=="Moving_Platform")
+        {
+            this.transform.parent = null;
         }
     }
 }
