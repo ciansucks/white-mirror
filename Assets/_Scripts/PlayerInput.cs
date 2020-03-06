@@ -171,14 +171,17 @@ public class PlayerInput : MonoBehaviour
 
         }
 
-        if (collision.gameObject.tag == "Moving_Platform")
-        {
-                //This will make the player a child of the Obstacle
-             this.transform.parent = collision.gameObject.transform; //Change "myPlayer" to your player
-        }
+
     }
 
-    private void OnTriggerExit(Collider collision)
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Moving_Platform")
+        this.transform.parent = other.gameObject.transform; //Change "myPlayer" to your player
+    }
+
+
+private void OnTriggerExit(Collider collision)
     {
       //  Debug.Log("Exited trigger zone of " + collision.gameObject);
         if (collision.gameObject.CompareTag("ReflectionField_Blue"))
