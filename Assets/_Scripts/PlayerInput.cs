@@ -176,8 +176,10 @@ public class PlayerInput : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Moving_Platform")
-        this.transform.parent = other.gameObject.transform; //Change "myPlayer" to your player
+        if (other.gameObject.tag == "Moving_Platform")
+
+            this.transform.SetParent(other.gameObject.transform, false);
+        //this.transform.parent = other.gameObject.transform; //Change "myPlayer" to your player
     }
 
 
@@ -198,7 +200,7 @@ private void OnTriggerExit(Collider collision)
         }
         if(collision.gameObject.tag=="Moving_Platform")
         {
-            this.transform.parent = null;
+            this.transform.SetParent(null, true);
         }
     }
 }
