@@ -6,27 +6,31 @@ public class MovingEnvironmentScript : MonoBehaviour
 {
 
     public GameObject moveObject;
-    public GameObject originPoint;
+
+    public Vector3 destination;
+    public Vector3 originPosition;
+
+
+    private Vector3 currentDestination;
     public GameObject destinationPoint;
     public bool isLoop;
     public float moveSpeed = 10.0f;
 
     public bool isMoving = false;
 
-    private Vector3 originPosition;
+    //private Vector3 originPosition;
     private Quaternion originRotation;
     private Vector3 destinationPosition;
     private Quaternion destinationRotation;
 
-    public Vector3 destination;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        originPosition = originPoint.transform.position;
-        originRotation = originPoint.transform.rotation;
-        destinationPosition = destinationPoint.transform.position;
-        destinationRotation = destinationPoint.transform.rotation;
+
+
+        currentDestination = destination;
     }
 
     // Update is called once per frame
@@ -35,10 +39,25 @@ public class MovingEnvironmentScript : MonoBehaviour
         if (isMoving)
         {
             float step = moveSpeed * Time.deltaTime; // step size = speed * frame time
-            moveObject.transform.position = Vector3.MoveTowards(moveObject.transform.position, destination, step); // moves position a step closer to the target position
-            if(moveObject.transform.position == destination)
+            moveObject.transform.position = Vector3.MoveTowards(moveObject.transform.position, currentDestination, step); // moves position a step closer to the target position
+            if(moveObject.transform.position == currentDestination)
             {
-                isMoving = false;
+                if (!isLoop)
+                {
+                    isMoving = false;
+                }
+                else
+                {
+                    if(currentDestination == destination)
+                    {
+                        currentDestination = originPosition;
+
+                    }
+                    else
+                    {
+                        currentDestination = destination;
+                    }
+                }
             }
         }
     }
@@ -47,7 +66,7 @@ public class MovingEnvironmentScript : MonoBehaviour
     {
         if (Input.GetButtonDown("ButtonPush"))
         {
-            isMoving = true;
+            isMoving = !isMoving;
 
             
         }
