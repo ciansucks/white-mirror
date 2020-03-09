@@ -26,17 +26,24 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Vector3 playerPosition = Player.transform.position;
+
 
         transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, MoveSpeed);
 
         if (Input.GetButtonDown("ToggleCamera"))
         {
 
-            ghostLook = !ghostLook;
+            ghostLook = true;
+        }
+        if(Input.GetButtonUp("ToggleCamera"))
+        {
+            ghostLook = false;
+            transform.LookAt(playerPosition);
+           
         }
 
-        Vector3 playerPosition = Player.transform.position;
-
+        
         if (ghostLook)
         {
 
