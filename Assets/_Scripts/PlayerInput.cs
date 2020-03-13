@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    public GameManager manager;
+
 
     public GameObject reflectionPlane;
 
@@ -16,7 +18,6 @@ public class PlayerInput : MonoBehaviour
     private bool shifted = false;
 
     PlayerDimensionShifting colorSwapScript;
-
 
 
 
@@ -170,7 +171,10 @@ public class PlayerInput : MonoBehaviour
      //       Debug.Log("Red reflection plane: " + reflectionPlane_Red);
 
         }
-
+        if(collision.gameObject.CompareTag("Death"))
+        {
+            manager.gameOver();
+        }
 
     }
 

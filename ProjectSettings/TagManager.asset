@@ -13,6 +13,7 @@ TagManager:
   - ReflectionField_Blue
   - Readable
   - Moving_Platform
+  - Death
   layers:
   - Default
   - TransparentFX
