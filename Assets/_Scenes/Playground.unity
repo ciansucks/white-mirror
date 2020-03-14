@@ -766,6 +766,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2701117063370001326, guid: c71824f60a56d8c41b69153992765863,
         type: 3}
+    - target: {fileID: 2786044112322728030, guid: 6e3824918c7792b48899ea0f4415bd3f,
+        type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 133111129}
     - target: {fileID: 2786044112322728032, guid: 6e3824918c7792b48899ea0f4415bd3f,
         type: 3}
       propertyPath: PlatformBar
