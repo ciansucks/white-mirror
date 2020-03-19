@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,6 +24,7 @@ public class ShowText : MonoBehaviour
     {
         if (isReading && Input.GetButtonDown("Cancel"))
         {
+            Debug.Log("Canceling input");
             player.SetActive(true);
             GuiCanvas.enabled = false;
             PlayerCanvas.enabled = true;
