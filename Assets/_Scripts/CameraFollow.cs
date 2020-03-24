@@ -12,6 +12,8 @@ public class CameraFollow : MonoBehaviour
     public bool UseOffset = true;
 
     public bool ghostLook = false;
+
+    public Transform Obstruction;
   
 
     // Start is called before the first frame update
@@ -21,6 +23,8 @@ public class CameraFollow : MonoBehaviour
         {
             offset = transform.position - Player.transform.position;
         }
+
+        Obstruction = Player.transform;
     }
 
     // Update is called once per frame
@@ -60,7 +64,34 @@ public class CameraFollow : MonoBehaviour
 
     }
 
-   
+    private void LateUpdate()
+    {
+        viewObstructed();
+    }
+
+    void viewObstructed()
+    {
+
+        
+        RaycastHit hit;
+
+        if(Physics.Raycast(transform.position, Player.transform.position-transform.position, out hit, 4.5f))
+        {
+            if(hit.collider.gameObject.tag != "Player" && hit.collider.gameObject.tag != "Player_Blue" && hit.collider.gameObject.tag != "Player_Red" && hit.collider.gameObject.tag != "ReflectionField_Blue" && hit.collider.gameObject.tag != "ReflectionField_Red")
+            {
+                Obstruction = hit.transform;
+           
+                Obstruction.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+
+                
+            }
+
+            else
+            {
+                Obstruction.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            }
+        }
+    }
 
 }
     
