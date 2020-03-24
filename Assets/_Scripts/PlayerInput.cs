@@ -5,10 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     public GameManager manager;
-
-
     public GameObject reflectionPlane;
-
 
     public GameObject reflectionPlane_Blue;
     public GameObject reflectionPlane_Red;
