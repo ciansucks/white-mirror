@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.29
   multiplier:
     m_OverrideState: 1
     m_Value: 1
@@ -70,35 +70,35 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   sunSize:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.04
     min: 0
     max: 1
   sunSizeConvergence:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 1
     min: 1
     max: 10
   atmosphereThickness:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
     min: 0
     max: 5
   skyTint:
     m_OverrideState: 1
-    m_Value: {r: 0.06692773, g: 0.23573919, b: 0.3018868, a: 1}
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   groundColor:
     m_OverrideState: 1
-    m_Value: {r: 0.369, g: 0.349, b: 0.341, a: 1}
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   - {fileID: -7158199279307433671}
   - {fileID: -6622245702143567072}
   - {fileID: 4172909896577046577}
+  - {fileID: 9020256380030446973}
 --- !u!114 &3866534020598240944
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -234,3 +235,25 @@ MonoBehaviour:
   enableDistantFog:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &9020256380030446973
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f034cba68ab55e046ae1445a42f18c0e, type: 3}
+  m_Name: IndirectLightingController
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  indirectSpecularIntensity:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+  indirectDiffuseIntensity:
+    m_OverrideState: 1
+    m_Value: 70.14
+    min: 0
