@@ -77,7 +77,7 @@ public class CameraFollow : MonoBehaviour
 
         if(Physics.Raycast(transform.position, Player.transform.position-transform.position, out hit, 4.5f))
         {
-            if(hit.collider.gameObject.tag != "Player" && hit.collider.gameObject.tag != "Player_Blue" && hit.collider.gameObject.tag != "Player_Red" && hit.collider.gameObject.tag != "ReflectionField_Blue" && hit.collider.gameObject.tag != "ReflectionField_Red")
+            if(hit.collider.gameObject.tag == "StaticEnvironment")
             {
                 Obstruction = hit.transform;
            
