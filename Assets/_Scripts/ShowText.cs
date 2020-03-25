@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class ShowText : MonoBehaviour
 {
     public TextAsset file;
+    public Sprite icon;
     public GameObject player;
     public Canvas GuiCanvas;
     private bool isReading;
@@ -47,7 +48,9 @@ public class ShowText : MonoBehaviour
             textbox.enabled = true;
             textbox.text = file.text;
 
-            GuiCanvas.transform.Find("TextLogIcon").GetComponent<Image>().enabled = true;
+            Image img = GuiCanvas.transform.Find("TextLogIcon").GetComponent<Image>();
+            img.enabled = true;
+            img.sprite = icon;
             player.SetActive(false); //disable player and movement until Cancel is hit
             isReading = true;
         }
