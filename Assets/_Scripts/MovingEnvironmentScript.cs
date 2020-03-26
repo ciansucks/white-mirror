@@ -46,8 +46,7 @@ public class MovingEnvironmentScript : MonoBehaviour
                 {
                     isMoving = false;
                 }
-                else
-                {
+                
                     if(currentDestination == destination)
                     {
                         currentDestination = originPosition;
@@ -57,7 +56,7 @@ public class MovingEnvironmentScript : MonoBehaviour
                     {
                         currentDestination = destination;
                     }
-                }
+                
             }
         }
     }
