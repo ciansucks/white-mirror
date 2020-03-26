@@ -198,6 +198,11 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("Player should Die");
             manager.gameOver();
         }
+        if(collision.gameObject.CompareTag("LevelTransition"))
+        {
+            Debug.Log("Moving to next scene");
+            manager.loadNextScene();
+        }
 
     }
 
