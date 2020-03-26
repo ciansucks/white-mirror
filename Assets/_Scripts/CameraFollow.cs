@@ -38,14 +38,14 @@ public class CameraFollow : MonoBehaviour
         if (Input.GetButtonDown("ToggleCamera"))
         {
 
-            ghostLook = true;
+            ghostLook = !ghostLook;
         }
-        if(Input.GetButtonUp("ToggleCamera"))
+       /* if(Input.GetButtonUp("ToggleCamera"))
         {
             ghostLook = false;
             transform.LookAt(playerPosition);
            
-        }
+        }*/
 
         
         if (ghostLook)

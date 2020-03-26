@@ -15,6 +15,7 @@ TagManager:
   - Moving_Platform
   - Death
   - StaticEnvironment
+  - LevelTransition
   layers:
   - Default
   - TransparentFX

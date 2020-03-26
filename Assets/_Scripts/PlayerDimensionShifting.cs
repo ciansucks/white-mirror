@@ -10,15 +10,21 @@ public class PlayerDimensionShifting : MonoBehaviour
     public UnityEvent ColorSwapEvent;
     public string playerColor;
     private bool isGrounded, isJumping, colorPress, colorCollision;
+    private Color dRed;
+    private Color dBlue;
+
     // Start is called before the first frame update
     void Start()
     {
+        dBlue = new Color32(84, 255, 255,80);
+        dRed = new Color32(255, 85, 85,80);
         if (playerColor.ToUpper() == "RED")
-            PlatformBar.color = Color.red;
+            PlatformBar.color = dRed;
         else
-            PlatformBar.color = Color.blue;
+            PlatformBar.color = dBlue;
 
         this.tag = "Player_" + playerColor;
+        Debug.Log("Player_" + playerColor);
 
         isGrounded = true;
         colorCollision = false;
@@ -37,14 +43,14 @@ public class PlayerDimensionShifting : MonoBehaviour
     private void SwitchColor()
     {
 
-        if (PlatformBar.color == Color.red)
+        if (PlatformBar.color == dRed)
         {
-            PlatformBar.color = Color.blue;
+            PlatformBar.color = dBlue;
             this.tag = "Player_Blue";
         }
         else
         {
-            PlatformBar.color = Color.red;
+            PlatformBar.color = dRed;
             this.tag = "Player_Red";
         }
 

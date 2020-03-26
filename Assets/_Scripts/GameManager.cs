@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
+        Debug.Log("GameOver");
         toggleTime();
         deathPanel.SetActive(true);
 
@@ -42,7 +43,14 @@ public class GameManager : MonoBehaviour
 
     public void retry()
     {
+        Debug.Log("Retry");
+
         toggleTime();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void loadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

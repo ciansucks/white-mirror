@@ -5,12 +5,21 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     public GameManager manager;
+
+
     public GameObject reflectionPlane;
+
 
     public GameObject reflectionPlane_Blue;
     public GameObject reflectionPlane_Red;
 
     public string playerColor;
+
+
+
+    public Animator playeranimator;
+
+
 
     private bool shifted = false;
 
@@ -48,6 +57,7 @@ public class PlayerInput : MonoBehaviour
 
 
 
+
         if (characterController.isGrounded)
         {
           
@@ -58,6 +68,8 @@ public class PlayerInput : MonoBehaviour
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpSpeed;
+                playeranimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
+                Invoke("setJumpFalse", 0.2f);
             }
 
         }
@@ -77,6 +89,13 @@ public class PlayerInput : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(tempMoveDirection * -1.0f);
         }
 
+
+
+
+
+
+        // set animator movement speed
+        playeranimator.SetFloat("Speed", moveDirection.magnitude);   
 
 
         moveDirection.y -= gravity * Time.deltaTime;
@@ -154,6 +173,12 @@ public class PlayerInput : MonoBehaviour
 
     }
 
+
+    private void setJumpFalse()
+    {
+        playeranimator.SetBool("Jump", false);
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Entered trigger zone of " + collision.gameObject);
@@ -170,7 +195,13 @@ public class PlayerInput : MonoBehaviour
         }
         if(collision.gameObject.CompareTag("Death"))
         {
+            Debug.Log("Player should Die");
             manager.gameOver();
+        }
+        if(collision.gameObject.CompareTag("LevelTransition"))
+        {
+            Debug.Log("Moving to next scene");
+            manager.loadNextScene();
         }
 
     }

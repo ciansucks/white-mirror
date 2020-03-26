@@ -134,6 +134,7 @@ MonoBehaviour:
   MoveSpeed: 0.05
   UseOffset: 1
   ghostLook: 0
+  Obstruction: {fileID: 0}
 --- !u!114 &2786044112152592310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +373,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2786044112322728029}
     m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: 44e9017f0ae2e4d41822f3548f33f1a3,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 93e9217bd0facdd4aafb0edf4c3a9fd4, type: 2}
     - target: {fileID: -4216859302048453862, guid: 44e9017f0ae2e4d41822f3548f33f1a3,
         type: 3}
       propertyPath: m_LocalPosition.x
