@@ -48,4 +48,9 @@ public class GameManager : MonoBehaviour
         toggleTime();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void loadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
 }
