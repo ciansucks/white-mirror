@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 2786044112322728024}
-  ghost: {fileID: 2701117063370001326, guid: c71824f60a56d8c41b69153992765863, type: 3}
+  ghost: {fileID: 2439422853034128697}
   MoveSpeed: 0.05
   UseOffset: 1
   ghostLook: 0
@@ -282,7 +282,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2786044112322728030
@@ -305,7 +305,7 @@ MonoBehaviour:
   playeranimator: {fileID: 1130206950906086393}
   speed: 6
   jumpSpeed: 10
-  gravity: 30
+  gravity: 35
   ghost: {fileID: 2439422853034128697}
 --- !u!114 &2786044112322728032
 MonoBehaviour:
