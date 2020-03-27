@@ -7,14 +7,16 @@ public class MovingEnvironmentScript : MonoBehaviour
 
     public GameObject moveObject;
 
-    public Vector3 destination;
     public Vector3 originPosition;
+    public Vector3 destination;
+    
 
 
     private Vector3 currentDestination;
     public GameObject destinationPoint;
     public bool isLoop;
     public float moveSpeed = 10.0f;
+    public bool xDoor;
 
     public bool isMoving = false;
 
@@ -29,8 +31,14 @@ public class MovingEnvironmentScript : MonoBehaviour
     void Start()
     {
 
-
-        currentDestination = destination;
+        originPosition = moveObject.transform.position;
+        if (xDoor)
+        {
+            destination = originPosition + new Vector3(2, 0, 0);
+        }
+        
+            currentDestination = destination;
+        
     }
 
     // Update is called once per frame
