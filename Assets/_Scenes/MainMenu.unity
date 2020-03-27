@@ -360,8 +360,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6949a6aaa50563f4aaaef78c406d26f8, type: 2}
+  m_sharedMaterial: {fileID: -2811502778109720908, guid: 6949a6aaa50563f4aaaef78c406d26f8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -515,8 +516,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: WHITE PRISM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6949a6aaa50563f4aaaef78c406d26f8, type: 2}
+  m_sharedMaterial: {fileID: -2811502778109720908, guid: 6949a6aaa50563f4aaaef78c406d26f8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -813,8 +815,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: EXIT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6949a6aaa50563f4aaaef78c406d26f8, type: 2}
+  m_sharedMaterial: {fileID: -2811502778109720908, guid: 6949a6aaa50563f4aaaef78c406d26f8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
