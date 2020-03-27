@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isLastScene = false;
 
     public GameObject deathPanel;
     private bool pauseGame = false;
@@ -51,6 +52,14 @@ public class GameManager : MonoBehaviour
 
     public void loadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        if (isLastScene)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

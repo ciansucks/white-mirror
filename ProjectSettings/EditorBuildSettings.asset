@@ -15,12 +15,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/VerticalSliceChunkOne.unity
     guid: 412f1550b8cf143459538d8ba376c841
   - enabled: 1
-    path: Assets/_Scenes/TutorialScene.unity
-    guid: 2fb44a88f85dad341b139cefaae1e148
+    path: Assets/_Scenes/VerticalSliceChunkTwo.unity
+    guid: b4e709f480eed2c4f99a4b573a616acd
   - enabled: 1
     path: Assets/_Scenes/00WBColorSwitch.unity
     guid: 4c8853c5f3178914089dafdf3941f90d
-  - enabled: 1
-    path: Assets/_Scenes/01WBPlaneReflection.unity
-    guid: cf557426866391c4b9bc778fe6315ea2
   m_configObjects: {}
