@@ -15,9 +15,12 @@ public class PlayerInput : MonoBehaviour
 
     public string playerColor;
 
+    public float ghostHeightOffset = -0.58f;
 
 
-    public Animator playeranimator;
+    public Animator playerAnimator;
+
+    public Animator ghostAnimator;
 
 
 
@@ -68,7 +71,8 @@ public class PlayerInput : MonoBehaviour
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpSpeed;
-                playeranimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
+                playerAnimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
+                ghostAnimator.SetBool("Jump", true);
                 Invoke("setJumpFalse", 0.2f);
             }
 
@@ -87,15 +91,17 @@ public class PlayerInput : MonoBehaviour
             Vector3 tempMoveDirection = moveDirection;
             tempMoveDirection.y = 0.0f;
             transform.rotation = Quaternion.LookRotation(tempMoveDirection * -1.0f);
+            ghost.transform.rotation = Quaternion.LookRotation(tempMoveDirection * 1.0f);
         }
 
 
 
 
-
+        
 
         // set animator movement speed
-        playeranimator.SetFloat("Speed", moveDirection.magnitude);   
+        playerAnimator.SetFloat("Speed", moveDirection.magnitude);
+        ghostAnimator.SetFloat("Speed", moveDirection.magnitude);
 
 
         moveDirection.y -= gravity * Time.deltaTime;
@@ -107,7 +113,7 @@ public class PlayerInput : MonoBehaviour
             ghost.SetActive(true);
             float offset = reflectionPlane_Blue.transform.position.x - transform.position.x;
 
-            Vector3 ghostPosition = new Vector3(reflectionPlane_Blue.transform.position.x + offset, transform.position.y, transform.position.z);
+            Vector3 ghostPosition = new Vector3(reflectionPlane_Blue.transform.position.x + offset, transform.position.y + ghostHeightOffset, transform.position.z);
             ghost.transform.position = ghostPosition;
         }
 
@@ -117,7 +123,8 @@ public class PlayerInput : MonoBehaviour
             ghost.SetActive(true);
             float offset = reflectionPlane_Red.transform.position.z - transform.position.z;
 
-            Vector3 ghostPosition = new Vector3(transform.position.x, transform.position.y, reflectionPlane_Red.transform.position.z + offset);
+            Vector3 ghostPosition = new Vector3(transform.position.x, transform.position.y + ghostHeightOffset, reflectionPlane_Red.transform.position.z + offset);
+            
             ghost.transform.position = ghostPosition;
         }
 
@@ -176,7 +183,8 @@ public class PlayerInput : MonoBehaviour
 
     private void setJumpFalse()
     {
-        playeranimator.SetBool("Jump", false);
+        playerAnimator.SetBool("Jump", false);
+        ghostAnimator.SetBool("Jump", false);
     }
 
     private void OnTriggerEnter(Collider collision)
