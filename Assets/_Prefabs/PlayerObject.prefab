@@ -593,7 +593,9 @@ MonoBehaviour:
   reflectionPlane_Blue: {fileID: 0}
   reflectionPlane_Red: {fileID: 0}
   playerColor: blue
-  playeranimator: {fileID: 1130206950906086393}
+  ghostHeightOffset: -0.58
+  playerAnimator: {fileID: 1130206950906086393}
+  ghostAnimator: {fileID: 8722285212984404560}
   speed: 6
   jumpSpeed: 10
   gravity: 35
@@ -770,6 +772,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2786044110577216561}
     m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: 44e9017f0ae2e4d41822f3548f33f1a3,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 93e9217bd0facdd4aafb0edf4c3a9fd4, type: 2}
     - target: {fileID: -4216859302048453862, guid: 44e9017f0ae2e4d41822f3548f33f1a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -861,6 +868,12 @@ GameObject:
 --- !u!4 &1693859174767085354 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 44e9017f0ae2e4d41822f3548f33f1a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5979512840604544048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8722285212984404560 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 44e9017f0ae2e4d41822f3548f33f1a3,
     type: 3}
   m_PrefabInstance: {fileID: 5979512840604544048}
   m_PrefabAsset: {fileID: 0}

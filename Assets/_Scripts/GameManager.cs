@@ -8,11 +8,15 @@ public class GameManager : MonoBehaviour
     public bool isLastScene;
 
     public GameObject deathPanel;
+
+    public GameObject buttonPromptPanel;
+
     private bool pauseGame = false;
     // Start is called before the first frame update
     void Start()
     {
         deathPanel.SetActive(false);
+        buttonPromptPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,6 +31,13 @@ public class GameManager : MonoBehaviour
         toggleTime();
         deathPanel.SetActive(true);
 
+    }
+
+    public void showButtonPrompt(string promptType)
+    {
+        Debug.Log("ShowButtonPrompt");
+
+        buttonPromptPanel.SetActive(true);
     }
 
     private void toggleTime()
@@ -62,4 +73,6 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
+
+    
 }

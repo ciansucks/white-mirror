@@ -132,7 +132,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36586
+  m_Name: pb_Mesh26390
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -295,7 +295,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36564
+  m_Name: pb_Mesh26368
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -470,7 +470,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27786
+  m_Name: pb_Mesh-3078
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -694,11 +694,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2786044112322728030, guid: 6e3824918c7792b48899ea0f4415bd3f,
-        type: 3}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 133111129}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e3824918c7792b48899ea0f4415bd3f, type: 3}
 --- !u!1 &315595582 stripped
@@ -1086,7 +1081,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36636
+  m_Name: pb_Mesh26440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1278,11 +1273,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveObject: {fileID: 985999974}
-  destination: {x: 0, y: 4, z: 20}
   originPosition: {x: 0, y: 10, z: 20}
+  destination: {x: 0, y: 4, z: 20}
   destinationPoint: {fileID: 0}
   isLoop: 1
   moveSpeed: 5
+  xDoor: 0
   isMoving: 0
 --- !u!65 &478832798
 BoxCollider:
@@ -2210,7 +2206,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36438
+  m_Name: pb_Mesh26244
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2682,7 +2678,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36488
+  m_Name: pb_Mesh26294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3169,7 +3165,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36502
+  m_Name: pb_Mesh26308
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3332,7 +3328,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36534
+  m_Name: pb_Mesh26340
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3834,7 +3830,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36622
+  m_Name: pb_Mesh26426
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3997,7 +3993,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36598
+  m_Name: pb_Mesh26402
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7901,7 +7897,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36460
+  m_Name: pb_Mesh26266
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8143,7 +8139,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36610
+  m_Name: pb_Mesh26414
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9626,7 +9622,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36516
+  m_Name: pb_Mesh26322
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9818,11 +9814,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveObject: {fileID: 315595582}
-  destination: {x: 1, y: 4, z: 20}
   originPosition: {x: 0, y: 0, z: 0}
+  destination: {x: 1, y: 4, z: 20}
   destinationPoint: {fileID: 0}
   isLoop: 0
   moveSpeed: 5
+  xDoor: 0
   isMoving: 0
 --- !u!65 &2008820604
 BoxCollider:
@@ -10132,7 +10129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36476
+  m_Name: pb_Mesh26282
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
