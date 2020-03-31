@@ -9,14 +9,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject deathPanel;
 
-    public GameObject buttonPromptPanel;
+    public bool allLogsRead = false;
 
     private bool pauseGame = false;
     // Start is called before the first frame update
     void Start()
     {
         deathPanel.SetActive(false);
-        buttonPromptPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,7 +36,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("ShowButtonPrompt");
 
-        buttonPromptPanel.SetActive(true);
     }
 
     private void toggleTime()
