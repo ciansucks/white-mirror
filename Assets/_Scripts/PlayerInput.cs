@@ -37,6 +37,7 @@ public class PlayerInput : MonoBehaviour
     public float gravity = 20.0f;
 
     private Vector3 moveDirection = Vector3.zero;
+    private Vector3 tempMoveDirection;
 
     public GameObject ghost;
 
@@ -55,50 +56,18 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        colorSwapScript = this.GetComponent<PlayerDimensionShifting>();
+        
 
-
-
-
-
-        if (characterController.isGrounded)
-        {
-          
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            moveDirection *= speed;
-           
-
-            if (Input.GetButton("Jump"))
-            {
-                moveDirection.y = jumpSpeed;
-                playerAnimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
-                ghostAnimator.SetBool("Jump", true);
-                Invoke("setJumpFalse", 0.2f);
-            }
-
-        }
-
-        else if (characterController.isGrounded == false) // Here I independently allow for both X and Z movement. 
-
-        {
-            moveDirection.x = Input.GetAxis("Horizontal") * speed;
-            moveDirection.z = Input.GetAxis("Vertical") * speed;
-            Debug.Log(moveDirection);
-        }
+        //End of movement inputs
 
         if (moveDirection != Vector3.zero)
         {
-            Vector3 tempMoveDirection = moveDirection;
+            tempMoveDirection = moveDirection;
             tempMoveDirection.y = 0.0f;
-            transform.rotation = Quaternion.LookRotation(tempMoveDirection * -1.0f);
+            transform.rotation = Quaternion.LookRotation(tempMoveDirection * -1.0f); //This is where facing is determined
             ghost.transform.rotation = Quaternion.LookRotation(tempMoveDirection * 1.0f);
         }
-
-
-
-
         
-
         // set animator movement speed
         playerAnimator.SetFloat("Speed", moveDirection.magnitude);
         ghostAnimator.SetFloat("Speed", moveDirection.magnitude);
@@ -127,15 +96,43 @@ public class PlayerInput : MonoBehaviour
             
             ghost.transform.position = ghostPosition;
         }
-
-
-        if (Input.GetButtonDown("Reflect"))
-        {
         
-            reflect(reflectionPlane);
+    }
+
+    private void Update()
+    {
+        colorSwapScript = this.GetComponent<PlayerDimensionShifting>();
+
+
+        //Start of movement inputs
+        if (characterController.isGrounded)
+        {
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection *= speed;
+
+            if (Input.GetButton("Jump"))
+            {
+                moveDirection.y = jumpSpeed;
+                playerAnimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
+                ghostAnimator.SetBool("Jump", true);
+                Invoke("setJumpFalse", 0.2f);
+            }
 
         }
 
+        else if (characterController.isGrounded == false) // Here I independently allow for both X and Z movement. 
+        {
+            moveDirection.x = Input.GetAxis("Horizontal") * speed;
+            moveDirection.z = Input.GetAxis("Vertical") * speed;
+            Debug.Log(moveDirection);
+        }
+
+        if (Input.GetButtonDown("Reflect"))
+        {
+
+            reflect(reflectionPlane);
+
+        }
     }
 
     void reflect(GameObject reflectionField)
