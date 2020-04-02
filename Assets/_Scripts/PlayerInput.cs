@@ -22,9 +22,10 @@ public class PlayerInput : MonoBehaviour
 
     public Animator ghostAnimator;
 
-    float reflectionCoolDown = 0.0f;
-    float timeSinceReflection = 0.0f;
+    public float reflectionCoolDown = 0.0f;
+    private float timeSinceReflection = 0.0f;
 
+    private bool reflecting = false; //If true, call reflection method
 
 
     private bool shifted = false;
@@ -96,7 +97,12 @@ public class PlayerInput : MonoBehaviour
             ghost.transform.position = ghostPosition;
         }
 
-
+        if (reflecting)
+        {
+            reflecting = false;
+            reflect(reflectionPlane);
+        }
+        /*
         if (Input.GetButtonDown("Reflect"))
         {
             if (timeSinceReflection > reflectionCoolDown)
@@ -106,6 +112,7 @@ public class PlayerInput : MonoBehaviour
 
             }
         }
+        */
 
     }
 
@@ -138,6 +145,13 @@ public class PlayerInput : MonoBehaviour
             Debug.Log(moveDirection);
         }
 
+        if (Input.GetButtonDown("Reflect"))
+        {
+            if (timeSinceReflection > reflectionCoolDown)
+            {
+                reflecting = true;
+            }
+        }
 
         
 
