@@ -596,6 +596,7 @@ MonoBehaviour:
   ghostHeightOffset: -0.58
   playerAnimator: {fileID: 1130206950906086393}
   ghostAnimator: {fileID: 8722285212984404560}
+  reflectionCoolDown: 0
   speed: 6
   jumpSpeed: 10
   gravity: 35
