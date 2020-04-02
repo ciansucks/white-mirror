@@ -30,7 +30,7 @@ public class PlayerInput : MonoBehaviour
 
     private bool shifted = false;
 
-    PlayerDimensionShifting colorSwapScript;
+    DimensionInput colorSwapScript;
 
 
 
@@ -51,7 +51,7 @@ public class PlayerInput : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         GameObject thePlayer = GameObject.Find("ThePlayer");
-        colorSwapScript = this.GetComponent<PlayerDimensionShifting>();
+        colorSwapScript = this.GetComponent<DimensionInput>();
 
         ghost = this.transform.Find("Ghost").gameObject;
 
@@ -118,7 +118,7 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        colorSwapScript = this.GetComponent<PlayerDimensionShifting>();
+        colorSwapScript = this.GetComponent<DimensionInput>();
 
         timeSinceReflection += Time.deltaTime;
         //Start of movement inputs

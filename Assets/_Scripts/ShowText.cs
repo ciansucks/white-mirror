@@ -19,9 +19,11 @@ public class ShowText : MonoBehaviour
     {
         colIcon = GuiCanvas.transform.Find("ColorSwitchImage").GetComponent<Image>();
         colTxt = colIcon.GetComponentInChildren<Text>();
+
         dataBG = GuiCanvas.transform.Find("TextLogBG").GetComponent<Image>();
         dataIcon = GuiCanvas.transform.Find("TextLogIcon").GetComponent<Image>();
         dataTxt = dataBG.GetComponentInChildren<Text>();
+
         readHelpBG = GuiCanvas.transform.Find("ReadIcon").GetComponent<Image>();
         readHelpTxt = readHelpBG.GetComponentInChildren<Text>();
 
