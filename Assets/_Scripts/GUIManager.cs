@@ -104,6 +104,8 @@ public class GUIManager : MonoBehaviour
 
                
                 break;
+            case "ReadHelpText":
+                break;
             default:
                 break;
         }
