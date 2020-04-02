@@ -21,7 +21,7 @@ public class ShowText : MonoBehaviour
         colTxt = colIcon.GetComponentInChildren<Text>();
         dataBG = GuiCanvas.transform.Find("TextLogBG").GetComponent<Image>();
         dataIcon = GuiCanvas.transform.Find("TextLogIcon").GetComponent<Image>();
-        dataTxt = GuiCanvas.transform.Find("TextLogText").GetComponent<Text>();
+        dataTxt = dataBG.GetComponentInChildren<Text>();
         readHelpBG = GuiCanvas.transform.Find("ReadIcon").GetComponent<Image>();
         readHelpTxt = readHelpBG.GetComponentInChildren<Text>();
 

@@ -9,15 +9,15 @@ public class PlayerDimensionShifting : MonoBehaviour
     public Image PlatformBar;
     public UnityEvent ColorSwapEvent;
     public string playerColor;
-    private bool isGrounded, isJumping, colorPress, colorCollision;
+    private bool isJumping, colorPress, colorCollision, colorTrigger;
     private Color dRed;
     private Color dBlue;
-
+    private GameObject currTrigger = null;
     // Start is called before the first frame update
     void Start()
     {
-        dBlue = new Color32(84, 255, 255,80);
-        dRed = new Color32(255, 85, 85,80);
+        dBlue = new Color32(84, 255, 255, 80);
+        dRed = new Color32(255, 85, 85, 80);
         if (playerColor.ToUpper() == "RED")
             PlatformBar.color = dRed;
         else
@@ -26,15 +26,16 @@ public class PlayerDimensionShifting : MonoBehaviour
         this.tag = "Player_" + playerColor;
         Debug.Log("Player_" + playerColor);
 
-        isGrounded = true;
         colorCollision = false;
+        colorTrigger = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        colorPress = Input.GetButtonDown("DimSwitch");     
-        if (colorPress && !colorCollision)
+        colorPress = Input.GetButtonDown("DimSwitch");
+        if (colorPress && !colorCollision && !colorTrigger)
             SwitchColor();
     }
     /// <summary>
@@ -64,30 +65,37 @@ public class PlayerDimensionShifting : MonoBehaviour
             colorCollision = true;
             Debug.Log("Touching platform");
         }
-  
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        isGrounded = true;
-    }
     private void OnCollisionExit(Collision collision)
     {
-        colorCollision = false;
-        isGrounded = false;
+        if (collision.collider.CompareTag("Platform_Red") || collision.collider.CompareTag("Platform_Blue"))
+        {
+            colorCollision = false;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Platform_Red") || other.CompareTag("Platform_Blue"))
         {
-            colorCollision = true;
+            if (currTrigger == null)
+            {
+                currTrigger = other.gameObject;
+            }
+            colorTrigger = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        colorCollision = false;
-
+        if (other.CompareTag("Platform_Red") || other.CompareTag("Platform_Blue"))
+        {
+            if (currTrigger.Equals(other.gameObject))
+            {
+                colorTrigger = false;
+                currTrigger = null;
+            }
+        }
     }
 
 }

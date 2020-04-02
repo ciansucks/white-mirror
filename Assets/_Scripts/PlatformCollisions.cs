@@ -15,11 +15,13 @@ public class PlatformCollisions : MonoBehaviour
     {
         RedPlat = GameObject.FindGameObjectsWithTag("Platform_Red");
         BluePlat = GameObject.FindGameObjectsWithTag("Platform_Blue");
+        Debug.Log("Blue platforms: " + BluePlat.Length);
 
         SetActivePlatforms();
     }
     public void SetActivePlatforms()
     {
+
         //true means the platform is a trigger and is inactive
         bool rTrig = true;
         bool bTrig = true;
