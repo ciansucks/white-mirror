@@ -22,6 +22,9 @@ public class PlayerInput : MonoBehaviour
 
     public Animator ghostAnimator;
 
+    float reflectionCoolDown = 0.0f;
+    float timeSinceReflection = 0.0f;
+
 
 
     private bool shifted = false;
@@ -56,9 +59,6 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-
-      
 
         if (moveDirection != Vector3.zero)
         {
@@ -96,11 +96,16 @@ public class PlayerInput : MonoBehaviour
             ghost.transform.position = ghostPosition;
         }
 
+
         if (Input.GetButtonDown("Reflect"))
         {
-            reflect(reflectionPlane);
-        }
+            if (timeSinceReflection > reflectionCoolDown)
+            {
+                timeSinceReflection = 0;
+                reflect(reflectionPlane);
 
+            }
+        }
 
     }
 
@@ -108,6 +113,7 @@ public class PlayerInput : MonoBehaviour
     {
         colorSwapScript = this.GetComponent<PlayerDimensionShifting>();
 
+        timeSinceReflection += Time.deltaTime;
         //Start of movement inputs
         
         if (characterController.isGrounded)
@@ -132,8 +138,8 @@ public class PlayerInput : MonoBehaviour
             Debug.Log(moveDirection);
         }
 
-        
 
+        
 
     }
 
