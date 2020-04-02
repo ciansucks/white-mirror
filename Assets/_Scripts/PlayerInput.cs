@@ -58,7 +58,7 @@ public class PlayerInput : MonoBehaviour
     {
         
 
-        //End of movement inputs
+      
 
         if (moveDirection != Vector3.zero)
         {
@@ -72,11 +72,12 @@ public class PlayerInput : MonoBehaviour
         playerAnimator.SetFloat("Speed", moveDirection.magnitude);
         ghostAnimator.SetFloat("Speed", moveDirection.magnitude);
 
-
+        //Gravity effects
         moveDirection.y -= gravity * Time.deltaTime;
 
         characterController.Move(moveDirection * Time.deltaTime);
 
+        //Positioning the ghost
         if (this.tag == "Player_Blue" && reflectionPlane_Blue != null)
         {
             ghost.SetActive(true);
@@ -85,8 +86,6 @@ public class PlayerInput : MonoBehaviour
             Vector3 ghostPosition = new Vector3(reflectionPlane_Blue.transform.position.x + offset, transform.position.y + ghostHeightOffset, transform.position.z);
             ghost.transform.position = ghostPosition;
         }
-
-
         else if(this.tag == "Player_Red" && reflectionPlane_Red != null)
         {
             ghost.SetActive(true);
@@ -96,15 +95,21 @@ public class PlayerInput : MonoBehaviour
             
             ghost.transform.position = ghostPosition;
         }
-        
+
+        if (Input.GetButtonDown("Reflect"))
+        {
+            reflect(reflectionPlane);
+        }
+
+
     }
 
-    private void Update()
+    void Update()
     {
         colorSwapScript = this.GetComponent<PlayerDimensionShifting>();
 
-
         //Start of movement inputs
+        
         if (characterController.isGrounded)
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
@@ -127,12 +132,9 @@ public class PlayerInput : MonoBehaviour
             Debug.Log(moveDirection);
         }
 
-        if (Input.GetButtonDown("Reflect"))
-        {
+        
 
-            reflect(reflectionPlane);
 
-        }
     }
 
     void reflect(GameObject reflectionField)

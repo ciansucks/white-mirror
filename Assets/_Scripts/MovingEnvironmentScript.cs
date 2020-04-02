@@ -75,7 +75,6 @@ public class MovingEnvironmentScript : MonoBehaviour
         {
             isMoving = !isMoving;
 
-            
         }
     }
 

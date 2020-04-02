@@ -35,11 +35,7 @@ public class CameraFollow : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, MoveSpeed);
 
-        if (Input.GetButtonDown("ToggleCamera"))
-        {
-
-            ghostLook = !ghostLook;
-        }
+       
        /* if(Input.GetButtonUp("ToggleCamera"))
         {
             ghostLook = false;
@@ -62,6 +58,15 @@ public class CameraFollow : MonoBehaviour
 
         else transform.LookAt(playerPosition);
 
+    }
+
+   void Update()
+    {
+        if (Input.GetButtonDown("ToggleCamera"))
+        {
+
+            ghostLook = !ghostLook;
+        }
     }
 
     private void LateUpdate()
