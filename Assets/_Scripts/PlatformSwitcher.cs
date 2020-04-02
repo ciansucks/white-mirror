@@ -82,12 +82,14 @@ public class PlatformSwitcher : MonoBehaviour
         Material[] mats = r.materials;
         Color baseCol = mats[0].color;
 
-        if (trigger)
+        //platform not active, make more transparent and reduce glow
+        if (trigger) 
         {
             baseCol.a = .1f;
             mats[1].SetColor("_EmissiveColor", newColor / scale);
 
         }
+        //platform active, more opaque platform and more glow
         else
         {
             baseCol.a = .75f;

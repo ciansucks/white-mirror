@@ -12,7 +12,6 @@ public class ShowText : MonoBehaviour
     public GameObject player;
     public Canvas GuiCanvas;
     private bool isReading;
-    // Start is called before the first frame update
     private Image colIcon, dataBG, dataIcon, readHelpBG;
     private Text colTxt, dataTxt, readHelpTxt;
     void Start()

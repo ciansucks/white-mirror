@@ -16,6 +16,8 @@ TagManager:
   - Death
   - StaticEnvironment
   - LevelTransition
+  - TutorialText
+  - DataLogText
   layers:
   - Default
   - TransparentFX
