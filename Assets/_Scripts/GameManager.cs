@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public bool isLastScene;
 
-    public GameObject deathPanel;
+    //public GameObject deathPanel;
 
     public bool allLogsRead = false;
 
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        deathPanel.SetActive(false);
+        //deathPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameOver");
         toggleTime();
-        deathPanel.SetActive(true);
+       // deathPanel.SetActive(true);
 
     }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Boo.Lang;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class PlatformCollisions : MonoBehaviour
 {
     private GameObject[] RedPlat;
     private GameObject[] BluePlat;
+    private Color startRed, startBlue;
     /// <summary>
     /// Called on ColorEvent.Invoke() in the PlayerInput class. 
     /// </summary>
@@ -15,7 +17,13 @@ public class PlatformCollisions : MonoBehaviour
     {
         RedPlat = GameObject.FindGameObjectsWithTag("Platform_Red");
         BluePlat = GameObject.FindGameObjectsWithTag("Platform_Blue");
-        Debug.Log("Blue platforms: " + BluePlat.Length);
+        Renderer r = RedPlat[0].GetComponent<Renderer>();
+        Material[] mats = r.materials;
+        startRed = mats[1].GetColor("_EmissiveColor")*5;
+
+        Renderer b = BluePlat[0].GetComponent<Renderer>();
+        Material[] mats2 = b.materials;
+        startBlue = mats2[1].GetColor("_EmissiveColor")*5;
 
         SetActivePlatforms();
     }
@@ -29,7 +37,7 @@ public class PlatformCollisions : MonoBehaviour
         //check which color player is
         if (this.tag == "Player_Red")
             rTrig = false;
-        else 
+        else
             bTrig = false;
 
 
@@ -40,13 +48,22 @@ public class PlatformCollisions : MonoBehaviour
             {
                 o.GetComponent<BoxCollider>().isTrigger = rTrig;
                 Renderer r = o.GetComponent<Renderer>();
-                Color newColor = r.material.color;
-                if (rTrig)
-                    newColor.a = .15f;
-                else
-                    newColor.a = .5f;
+                Material[] mats = r.materials;
+                Color newColor = mats[0].color;
+               // Color newGlow = mats[1].GetColor("_EmissiveColor");
 
-                r.material.SetColor("_BaseColor", newColor);
+                if (rTrig)
+                {
+                    newColor.a = .15f;
+                    mats[1].SetColor("_EmissiveColor", startRed/2f);
+                }
+                else
+                {
+                    newColor.a = .5f;
+                    mats[1].SetColor("_EmissiveColor", startRed * 2f);
+                }
+
+                mats[0].SetColor("_BaseColor", newColor);
 
             }
 
@@ -58,13 +75,24 @@ public class PlatformCollisions : MonoBehaviour
             {
                 o.GetComponent<BoxCollider>().isTrigger = bTrig;
                 Renderer r = o.GetComponent<Renderer>();
-                Color newColor = r.material.color;
-                if (bTrig)
-                    newColor.a = .15f;
-                else
-                    newColor.a = .5f;
+                Material[] mats = r.materials;
+                Color newColor = mats[0].color;
+                //Color newGlow = mats[1].GetColor("_EmissiveColor");
 
-                r.material.SetColor("_BaseColor", newColor);
+                if (bTrig)
+                {
+                    newColor.a = .15f;
+                    mats[1].SetColor("_EmissiveColor", startBlue /5f);
+
+                }
+                else
+                {
+                    newColor.a = .5f;
+                    mats[1].SetColor("_EmissiveColor", startBlue * 5f);
+
+                }
+                mats[0].SetColor("_BaseColor", newColor);
+               // mats[1].SetColor("_EmissiveColor", newGlow);
             }
         }
 
