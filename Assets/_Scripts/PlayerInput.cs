@@ -237,7 +237,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (other.gameObject.tag == "Moving_Platform")
 
-            this.transform.SetParent(other.gameObject.transform, false);
+            this.transform.SetParent(other.gameObject.transform, true);
         //this.transform.parent = other.gameObject.transform; //Change "myPlayer" to your player
     }
 
