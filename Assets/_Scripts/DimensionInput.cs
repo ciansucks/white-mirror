@@ -14,7 +14,15 @@ public class DimensionInput : MonoBehaviour
     private Color dBlue = new Color32(84, 255, 255, 80);
     private GameObject currTrigger = null;
 
+
+
+    private Color backpackRed = new Color32(255, 85, 85, 255);
+    private Color backpackBlue = new Color32(84, 255, 255, 255);
     public GameObject playerBackpack;
+    public Light backpackLight;
+
+    public GameObject ghostBackpack;
+    public Light ghostBackpackLight;
 
     void Start()
     {
@@ -45,10 +53,9 @@ public class DimensionInput : MonoBehaviour
         {
             PlatformBar.color = dBlue;
 
-            var backpackRenderer = playerBackpack.GetComponent<Renderer>();
-            backpackRenderer.material.SetColor("_BaseColor", dBlue);
-            backpackRenderer.material.SetColor("_EmissiveColor", dBlue);
-          //  backpackRenderer.material.color = dBlue;
+            SetBackpackColor(backpackBlue);
+
+          
 
             this.tag = "Player_Blue";
         }
@@ -56,11 +63,9 @@ public class DimensionInput : MonoBehaviour
         {
             PlatformBar.color = dRed;
 
-            
 
-            var backpackRenderer = playerBackpack.GetComponent<Renderer>();
-            backpackRenderer.material.SetColor("_BaseColor", dRed);
-            backpackRenderer.material.SetColor("_EmissiveColor", dRed);
+
+            SetBackpackColor(backpackRed);
 
 
 
@@ -93,6 +98,20 @@ public class DimensionInput : MonoBehaviour
                 currTrigger = null;
             }
         }
+    }
+
+    private void SetBackpackColor(Color newColor)
+    {
+        var backpackRenderer = playerBackpack.GetComponent<Renderer>();
+        backpackRenderer.material.SetColor("_BaseColor", newColor);
+        backpackRenderer.material.SetColor("_EmissiveColor", newColor);
+
+        backpackLight.color = newColor;
+
+        backpackRenderer = ghostBackpack.GetComponent<Renderer>();
+        backpackRenderer.material.SetColor("_BaseColor", newColor);
+        backpackRenderer.material.SetColor("_EmissiveColor", newColor);
+        ghostBackpackLight.color = newColor;
     }
 
 }
