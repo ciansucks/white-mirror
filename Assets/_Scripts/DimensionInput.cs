@@ -14,6 +14,8 @@ public class DimensionInput : MonoBehaviour
     private Color dBlue = new Color32(84, 255, 255, 80);
     private GameObject currTrigger = null;
 
+    public GameObject playerBackpack;
+
     void Start()
     {
         if (playerColor.ToUpper() == "RED")
@@ -42,11 +44,26 @@ public class DimensionInput : MonoBehaviour
         if (PlatformBar.color == dRed)
         {
             PlatformBar.color = dBlue;
+
+            var backpackRenderer = playerBackpack.GetComponent<Renderer>();
+            backpackRenderer.material.SetColor("_BaseColor", dBlue);
+            backpackRenderer.material.SetColor("_EmissiveColor", dBlue);
+          //  backpackRenderer.material.color = dBlue;
+
             this.tag = "Player_Blue";
         }
         else
         {
             PlatformBar.color = dRed;
+
+            
+
+            var backpackRenderer = playerBackpack.GetComponent<Renderer>();
+            backpackRenderer.material.SetColor("_BaseColor", dRed);
+            backpackRenderer.material.SetColor("_EmissiveColor", dRed);
+
+
+
             this.tag = "Player_Red";
         }
 

@@ -630,6 +630,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playerColor: Blue
+  playerBackpack: {fileID: 2632244716180999782}
 --- !u!114 &2786044112322728031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,6 +745,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae65352e1593df34c980f66156ec138e, type: 3}
+--- !u!1 &2632244716180999782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2632244716460010930, guid: ae65352e1593df34c980f66156ec138e,
+    type: 3}
+  m_PrefabInstance: {fileID: 329343956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2621088613573739929
 PrefabInstance:
   m_ObjectHideFlags: 0
