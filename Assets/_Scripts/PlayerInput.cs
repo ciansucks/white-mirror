@@ -22,7 +22,10 @@ public class PlayerInput : MonoBehaviour
 
     public Animator ghostAnimator;
 
-    public float reflectionCoolDown = 0.0f;
+    public float jumpCooldown = 1.0f;
+    private float timeSinceJump = 0.0f;
+
+    public float reflectionCoolDown = 1.0f;
     private float timeSinceReflection = 0.0f;
 
     private bool reflecting = false; //If true, call reflection method
@@ -102,17 +105,7 @@ public class PlayerInput : MonoBehaviour
             reflecting = false;
             reflect(reflectionPlane);
         }
-        /*
-        if (Input.GetButtonDown("Reflect"))
-        {
-            if (timeSinceReflection > reflectionCoolDown)
-            {
-                timeSinceReflection = 0;
-                reflect(reflectionPlane);
-
-            }
-        }
-        */
+        
 
     }
 
@@ -121,6 +114,7 @@ public class PlayerInput : MonoBehaviour
         colorSwapScript = this.GetComponent<DimensionInput>();
 
         timeSinceReflection += Time.deltaTime;
+        timeSinceJump += Time.deltaTime;
         //Start of movement inputs
         
         if (characterController.isGrounded)
@@ -128,12 +122,17 @@ public class PlayerInput : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
-            if (Input.GetButton("Jump"))
+            if (Input.GetButtonDown("Jump"))
             {
-                moveDirection.y = jumpSpeed;
-                playerAnimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
-                ghostAnimator.SetBool("Jump", true);
-                Invoke("setJumpFalse", 0.2f);
+                //if(timeSinceJump > jumpCooldown)
+                //{
+                    timeSinceJump = 0.0f;
+                    moveDirection.y = jumpSpeed;
+                    playerAnimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
+                    ghostAnimator.SetBool("Jump", true);
+                    Invoke("setJumpFalse", 0.2f);
+               // }
+                
             }
 
         }
@@ -147,8 +146,11 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetButtonDown("Reflect"))
         {
+            Debug.Log("Time since reflection: " + timeSinceReflection);
+            Debug.Log("Reflection Cooldown: " + reflectionCoolDown);
             if (timeSinceReflection > reflectionCoolDown)
             {
+                timeSinceReflection = 0;
                 reflecting = true;
             }
         }
