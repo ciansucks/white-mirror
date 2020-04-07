@@ -25,7 +25,7 @@ public class PlayerInput : MonoBehaviour
     public float jumpCoolDown = 6.0f;
     private float timeSinceJump = 0.0f;
 
-    public float timeBetweenJumps = 1.0f;
+    private float timeBetweenJumps = 1.0f;
 
     public float reflectionCoolDown = 1.0f;
     private float timeSinceReflection = 0.0f;
@@ -52,6 +52,8 @@ public class PlayerInput : MonoBehaviour
 
     public GameObject ghost;
 
+    private float tempJumpVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,17 +73,27 @@ public class PlayerInput : MonoBehaviour
         if (moveDirection != Vector3.zero)
         {
             tempMoveDirection = moveDirection;
-            tempMoveDirection.y = 0.0f;
-            transform.rotation = Quaternion.LookRotation(tempMoveDirection * -1.0f); //This is where facing is determined
-            ghost.transform.rotation = Quaternion.LookRotation(tempMoveDirection * 1.0f);
-        }
-        
+            tempMoveDirection.y = 0.0f; //We zero this out so the player doesn't rotate up or down
+
+            if (tempMoveDirection != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(tempMoveDirection * -1.0f); //This is where facing is determined
+                ghost.transform.rotation = Quaternion.LookRotation(tempMoveDirection * 1.0f);
+            }
+
+        }        
         // set animator movement speed
         playerAnimator.SetFloat("Speed", moveDirection.magnitude);
         ghostAnimator.SetFloat("Speed", moveDirection.magnitude);
 
+        if (tempJumpVelocity != 0)
+        {
+            moveDirection.y = tempJumpVelocity;
+        }
         //Gravity effects
         moveDirection.y -= gravity * Time.deltaTime;
+
+        tempJumpVelocity = 0;
 
         characterController.Move(moveDirection * Time.deltaTime);
 
@@ -127,15 +139,17 @@ public class PlayerInput : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
-            if (Input.GetButton("Jump") && canJump)
+            if (Input.GetButtonDown("Jump") && canJump)
             {
-               // canJump = false;
+               canJump = false;
+
                 timeSinceJump = 0.0f;
-                moveDirection.y = jumpSpeed;
+                tempJumpVelocity = jumpSpeed;
                 playerAnimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
                 ghostAnimator.SetBool("Jump", true);
+
                 Invoke("setJumpFalse", 0.2f);
-               // Invoke("jumpReset", timeBetweenJumps);
+                Invoke("jumpReset", timeBetweenJumps);
                
                 
             }
