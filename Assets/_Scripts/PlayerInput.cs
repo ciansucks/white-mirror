@@ -22,13 +22,17 @@ public class PlayerInput : MonoBehaviour
 
     public Animator ghostAnimator;
 
-    public float jumpCooldown = 1.0f;
+    public float jumpCoolDown = 6.0f;
     private float timeSinceJump = 0.0f;
+
+    public float timeBetweenJumps = 1.0f;
 
     public float reflectionCoolDown = 1.0f;
     private float timeSinceReflection = 0.0f;
 
     private bool reflecting = false; //If true, call reflection method
+
+    private bool canJump = true;
 
 
     private bool shifted = false;
@@ -119,19 +123,20 @@ public class PlayerInput : MonoBehaviour
         
         if (characterController.isGrounded)
         {
+
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButton("Jump") && canJump)
             {
-                //if(timeSinceJump > jumpCooldown)
-                //{
-                    timeSinceJump = 0.0f;
-                    moveDirection.y = jumpSpeed;
-                    playerAnimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
-                    ghostAnimator.SetBool("Jump", true);
-                    Invoke("setJumpFalse", 0.2f);
-               // }
+               // canJump = false;
+                timeSinceJump = 0.0f;
+                moveDirection.y = jumpSpeed;
+                playerAnimator.SetBool("Jump", true); // setting animation for jump equal to true when clicked
+                ghostAnimator.SetBool("Jump", true);
+                Invoke("setJumpFalse", 0.2f);
+               // Invoke("jumpReset", timeBetweenJumps);
+               
                 
             }
 
@@ -201,6 +206,10 @@ public class PlayerInput : MonoBehaviour
 
     }
 
+    private void jumpReset()
+    {
+        canJump = true;
+    }
 
     private void setJumpFalse()
     {
