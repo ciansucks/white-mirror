@@ -9,18 +9,20 @@ using UnityEngine.UI;
 public class ShowText : MonoBehaviour
 {
     public TextAsset file;
-    public GameObject player;
+    public GameObject player; 
+    private Transform dataPanel;
     public Canvas GuiCanvas;
     private bool isReading;
     private Image colIcon, dataBG, dataIcon, readHelpBG;
     private Text colTxt, dataTxt, readHelpTxt;
     void Start()
     {
+       
         colIcon = GuiCanvas.transform.Find("ColorSwitchImage").GetComponent<Image>();
         colTxt = colIcon.GetComponentInChildren<Text>();
-
-        dataBG = GuiCanvas.transform.Find("TextLogBG").GetComponent<Image>();
-        dataIcon = GuiCanvas.transform.Find("TextLogIcon").GetComponent<Image>();
+        dataPanel = GuiCanvas.transform.Find("DataLogPanel");
+        dataBG = dataPanel.Find("TextLogBG").GetComponent<Image>();
+        dataIcon = dataPanel.Find("TextLogIcon").GetComponent<Image>();
         dataTxt = dataBG.GetComponentInChildren<Text>();
 
         readHelpBG = GuiCanvas.transform.Find("ReadIcon").GetComponent<Image>();
@@ -33,7 +35,7 @@ public class ShowText : MonoBehaviour
         dataTxt.enabled = false;
         readHelpBG.enabled = false;
         readHelpTxt.enabled = false;
-
+        dataPanel.GetComponent<Image>().enabled = false;
         isReading = false;
     }
 
@@ -49,9 +51,13 @@ public class ShowText : MonoBehaviour
             dataBG.enabled = false;
             dataIcon.enabled = false;
             dataTxt.enabled = false;
+            dataPanel.GetComponent<Image>().enabled = false;
+
             isReading = false;
-            readHelpBG.enabled = false;
-            readHelpTxt.enabled = false;
+            readHelpTxt.text = "Press Z to Read";
+
+            //readHelpBG.enabled = false;
+            //readHelpTxt.enabled = false;
         }
     }
     /// <summary>
@@ -82,6 +88,8 @@ public class ShowText : MonoBehaviour
             dataIcon.enabled = true;
             dataTxt.enabled = true;
             dataTxt.enabled = true;
+            dataPanel.GetComponent<Image>().enabled = true;
+
             dataTxt.text = file.text;
             readHelpTxt.text = "Press X to Exit";
 

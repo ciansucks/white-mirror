@@ -11,11 +11,13 @@ using System.IO;
 /// </summary>
 public class GUIManager : MonoBehaviour
 {
-
     private Image colIcon, dataBG, dataIcon, readHelpBG;
     private Text colTxt, dataTxt, readHelpTxt;
     private Image tutorialBG;
+    public GameObject scrollContents;
     private Text tutorialTxt;
+    private Transform dataPanel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +25,11 @@ public class GUIManager : MonoBehaviour
         colIcon = this.transform.Find("ColorSwitchImage").GetComponent<Image>();
         colTxt = colIcon.GetComponentInChildren<Text>();
 
-        dataBG = this.transform.Find("TextLogBG").GetComponent<Image>();
-        dataIcon = this.transform.Find("TextLogIcon").GetComponent<Image>();
-        dataTxt = dataBG.GetComponentInChildren<Text>();
-
+        dataPanel = this.transform.Find("DataLogPanel");
+        dataBG = dataPanel.Find("TextLogBG").GetComponent<Image>();
+        dataIcon = dataPanel.Find("TextLogIcon").GetComponent<Image>();
+        // dataTxt = dataBG.GetComponentInChildren<Text>();
+        dataTxt = scrollContents.GetComponent<Text>();
         readHelpBG = this.transform.Find("ReadIcon").GetComponent<Image>();
         readHelpTxt = readHelpBG.GetComponentInChildren<Text>();
 
@@ -48,6 +51,7 @@ public class GUIManager : MonoBehaviour
     {
         if (input == "")
         {
+            dataPanel.gameObject.SetActive(false);
             dataTxt.enabled = false;
             dataBG.enabled = false;
             dataIcon.enabled = false;
@@ -55,6 +59,7 @@ public class GUIManager : MonoBehaviour
         }
         else
         {
+            dataPanel.gameObject.SetActive(true);
             dataTxt.text = input;
             dataTxt.enabled = true;
             dataBG.enabled = true;
@@ -100,11 +105,10 @@ public class GUIManager : MonoBehaviour
                 break;
             case "DataLogText":
                 //TO DO: Change so datalog is enabled when ReadButton is used
-                SetReadHelpText(input);
-
-               
+                SetDatalogText(input);
                 break;
             case "ReadHelpText":
+                SetReadHelpText(input);
                 break;
             default:
                 break;
