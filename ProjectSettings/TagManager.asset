@@ -18,6 +18,8 @@ TagManager:
   - LevelTransition
   - TutorialText
   - DataLogText
+  - Moving_Platform_Red
+  - Moving_Platform_Blue
   layers:
   - Default
   - TransparentFX

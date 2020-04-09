@@ -260,7 +260,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Moving_Platform")
+        if (other.gameObject.tag == "Moving_Platform" || other.gameObject.tag == "Moving_Platform_Red" || other.gameObject.tag == "Moving_Platform_Blue")
 
             this.transform.SetParent(other.gameObject.transform, true);
         //this.transform.parent = other.gameObject.transform; //Change "myPlayer" to your player
