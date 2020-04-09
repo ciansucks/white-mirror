@@ -7,10 +7,15 @@ using UnityEngine.UI;
 public class TutorialText : MonoBehaviour
 {
     public GameObject player;
+    public enum Character
+    {
+        Carol,Vina,Pablo,Quack
+    }
     private static GUIManager gCanvas;
     private string readTag = "ReadHelpText";
     public TextAsset file;
     public Canvas canvas;
+    public Character icon;
     private bool isDataLog, isReading;
     // Start is called before the first frame update
     void Start()
@@ -53,7 +58,7 @@ public class TutorialText : MonoBehaviour
 
             isReading = true;
             gCanvas.setText(readTag, "Press X to Exit");
-            gCanvas.setText(this.tag, file.text);
+            gCanvas.setText(this.tag, file.text, icon.ToString());
         }
     }
 }

@@ -12,6 +12,8 @@ using System.IO;
 public class GUIManager : MonoBehaviour
 {
     private Image colIcon, dataBG, dataIcon, readHelpBG;
+    private Image iVina, iCarol, iPablo, iQuack;
+
     private Text colTxt, dataTxt, readHelpTxt;
     private Image tutorialBG;
     public GameObject scrollContents;
@@ -22,12 +24,13 @@ public class GUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
+
         colIcon = this.transform.Find("ColorSwitchImage").GetComponent<Image>();
         colTxt = colIcon.GetComponentInChildren<Text>();
 
         dataPanel = this.transform.Find("DataLogPanel");
         dataBG = dataPanel.Find("TextLogBG").GetComponent<Image>();
-        dataIcon = dataPanel.Find("TextLogIcon").GetComponent<Image>();
         // dataTxt = dataBG.GetComponentInChildren<Text>();
         dataTxt = scrollContents.GetComponent<Text>();
         readHelpBG = this.transform.Find("ReadIcon").GetComponent<Image>();
@@ -36,9 +39,15 @@ public class GUIManager : MonoBehaviour
         tutorialBG = this.transform.Find("TutorialPanel").GetComponent<Image>();
         tutorialTxt = tutorialBG.GetComponentInChildren<Text>();
 
+        iVina = dataPanel.Find("TextLogIconVina").GetComponent<Image>();
+        iCarol = dataPanel.Find("TextLogIconCarol").GetComponent<Image>();
+        iPablo = dataPanel.Find("TextLogIconPablo").GetComponent<Image>();
+        iQuack = dataPanel.Find("TextLogIconQuack").GetComponent<Image>();
+        dataIcon =iVina;
+
         EnableColorSwap(false);
         SetTutorialText("");
-        SetDatalogText("");
+        SetDatalogText("", "");
         SetReadHelpText("");
     }
 
@@ -55,10 +64,37 @@ public class GUIManager : MonoBehaviour
             dataTxt.enabled = false;
             dataBG.enabled = false;
             dataIcon.enabled = false;
-
+            iVina.enabled = false;
+            iCarol.enabled = false;
+            iPablo.enabled = false;
+            iQuack.enabled = false;
         }
         else
         {
+            dataPanel.gameObject.SetActive(true);
+            dataTxt.text = input;
+            dataTxt.enabled = true;
+            dataBG.enabled = true;
+            dataIcon.enabled = true;
+
+        }
+    }
+    public void SetDatalogText(String input, String character)
+    {
+        if (input == "")
+        {
+            dataPanel.gameObject.SetActive(false);
+            dataTxt.enabled = false;
+            dataBG.enabled = false;
+            dataIcon.enabled = false;
+            iVina.enabled = false;
+            iCarol.enabled = false;
+            iPablo.enabled = false;
+            iQuack.enabled = false;
+        }
+        else
+        {
+            dataIcon = dataPanel.Find("TextLogIcon"+character).GetComponent<Image>();
             dataPanel.gameObject.SetActive(true);
             dataTxt.text = input;
             dataTxt.enabled = true;
@@ -79,7 +115,7 @@ public class GUIManager : MonoBehaviour
             readHelpBG.enabled = true;
             readHelpTxt.enabled = true;
         }
-       
+
     }
 
     public void SetTutorialText(String input)
@@ -109,6 +145,21 @@ public class GUIManager : MonoBehaviour
                 break;
             case "ReadHelpText":
                 SetReadHelpText(input);
+                break;
+            default:
+                break;
+        }
+
+
+    }
+    public void setText(String tag, String input, String character)
+    {
+        switch (tag)
+        {
+
+            case "DataLogText":
+                //TO DO: Change so datalog is enabled when ReadButton is used
+                SetDatalogText(input, character);
                 break;
             default:
                 break;
