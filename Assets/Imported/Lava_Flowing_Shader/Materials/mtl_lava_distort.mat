@@ -20,21 +20,17 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Distort:
-        m_Texture: {fileID: 2800000, guid: 0ebfaeff4eb7328498165095f9cfc32f, type: 3}
+        m_Texture: {fileID: 2800000, guid: e381b7a565466cf4db46832597dc776e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LavaTex:
         m_Texture: {fileID: 2800000, guid: a79ab0244e05b4d47a9f55751783c93a, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0.5555198, y: 0}
+        m_Offset: {x: 0.22930308, y: 0.22930308}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: eac6bf3e2e5f5f2468263baee60b66b4, type: 3}
         m_Scale: {x: 1, y: 1}
-<<<<<<< HEAD
-        m_Offset: {x: 2.3466191, y: 2.3466191}
-=======
-        m_Offset: {x: 1.7478557, y: 1.7478557}
->>>>>>> ffec6c62a7b9bdf8c510bf7f8cf721c1b2cdfa05
+        m_Offset: {x: 0.22930308, y: 0.22930308}
     - _MainTex2:
         m_Texture: {fileID: 2800000, guid: bef54341b6d21864c82d47f3bed4c7db, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -45,8 +41,8 @@ Material:
         m_Offset: {x: 1.5691679, y: 0}
     m_Floats:
     - _Displacement: 0.0375
-    - _DistortX: 1.0714285
-    - _DistortY: 0
+    - _DistortX: 0.81
+    - _DistortY: 0.77
     - _RefractTexTiling: 1
     m_Colors:
     - _ChannelFactor: {r: -0.3281326, g: 0.5920941, b: 0.7360384, a: 0}
