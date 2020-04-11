@@ -2796,7 +2796,7 @@ MonoBehaviour:
   isLoop: 1
   moveSpeed: 5
   xDoor: 0
-  isMoving: 1
+  isMoving: 0
 --- !u!1001 &364292750
 PrefabInstance:
   m_ObjectHideFlags: 0
