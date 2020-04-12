@@ -16,7 +16,10 @@ public class MovingEnvironmentScript : MonoBehaviour
     public GameObject destinationPoint;
     public bool isLoop;
     public float moveSpeed = 10.0f;
-    public bool xDoor;
+    public bool simpleX;
+    public bool simpleY;
+    public bool simpleZ;
+    public float simpleMoveDistance = 3.00f;
 
     public bool isMoving = false;
 
@@ -32,10 +35,19 @@ public class MovingEnvironmentScript : MonoBehaviour
     {
 
         originPosition = moveObject.transform.position;
-        if (xDoor)
+        if (simpleX)
         {
-            destination = originPosition + new Vector3(2, 0, 0);
+            destination = originPosition + new Vector3(simpleMoveDistance, 0, 0);
         }
+        else if(simpleY)
+        {
+            destination = originPosition + new Vector3(0, simpleMoveDistance, 0);
+        }
+        else if(simpleZ)
+        {
+            destination = originPosition + new Vector3(0, 0, simpleMoveDistance);
+        }
+        
         
             currentDestination = destination;
         
