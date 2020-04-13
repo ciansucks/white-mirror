@@ -7,7 +7,7 @@ public class MovingEnvironmentScript : MonoBehaviour
 
     public GameObject moveObject;
 
-    public Vector3 originPosition;
+    private Vector3 originPosition;
     public Vector3 destination;
     
 
