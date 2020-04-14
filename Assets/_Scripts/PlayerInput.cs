@@ -256,18 +256,22 @@ public class PlayerInput : MonoBehaviour
             manager.loadNextScene();
         }
 
+        if (collision.gameObject.tag == "Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
+        {
+            this.transform.SetParent(collision.gameObject.transform, true);
+        }
+
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider collision)
     {
-        if (other.gameObject.tag == "Moving_Platform" || other.gameObject.tag == "Moving_Platform_Red" || other.gameObject.tag == "Moving_Platform_Blue")
+        
 
-            this.transform.SetParent(other.gameObject.transform, true);
         //this.transform.parent = other.gameObject.transform; //Change "myPlayer" to your player
     }
 
 
-private void OnTriggerExit(Collider collision)
+    private void OnTriggerExit(Collider collision)
     {
       //  Debug.Log("Exited trigger zone of " + collision.gameObject);
         if (collision.gameObject.CompareTag("ReflectionField_Blue"))
