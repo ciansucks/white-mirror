@@ -9,14 +9,17 @@ using UnityEngine;
 /// </summary>
 public class PlatformSwitcher : MonoBehaviour
 {
-    private GameObject[] rPlatforms, bPlatforms;
+    private GameObject[] rPlatforms, bPlatforms,rMoving,bMoving;
     private Color eRed, eBlue;
 
     private void Start()
     {
         //get all Dim Switch platforms
         rPlatforms = GameObject.FindGameObjectsWithTag("Platform_Red");
+        rMoving = GameObject.FindGameObjectsWithTag("Moving_Platform_Red");
+
         bPlatforms = GameObject.FindGameObjectsWithTag("Platform_Blue");
+        bMoving = GameObject.FindGameObjectsWithTag("Moving_Platform_Blue");
 
         //get initial red glow
         Renderer r = rPlatforms[0].GetComponent<Renderer>();
@@ -57,11 +60,24 @@ public class PlatformSwitcher : MonoBehaviour
                 SetPlatformMaterials(r, rTrig, eRed, 2f);
 
             }
+            foreach (GameObject o in rMoving)
+            {
+                o.GetComponent<BoxCollider>().isTrigger = rTrig;
+                Renderer r = o.GetComponent<Renderer>();
+                SetPlatformMaterials(r, rTrig, eRed, 2f);
+
+            }
         }
         //check blue platforms
         if (bPlatforms[0].GetComponent<BoxCollider>().isTrigger != bTrig)
         {
             foreach (GameObject o in bPlatforms)
+            {
+                o.GetComponent<BoxCollider>().isTrigger = bTrig;
+                Renderer r = o.GetComponent<Renderer>();
+                SetPlatformMaterials(r, bTrig, eBlue, 5f);
+            }
+            foreach (GameObject o in bMoving)
             {
                 o.GetComponent<BoxCollider>().isTrigger = bTrig;
                 Renderer r = o.GetComponent<Renderer>();

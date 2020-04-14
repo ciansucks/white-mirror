@@ -37,8 +37,9 @@ public class GUIManager : MonoBehaviour
         readHelpTxt = readHelpBG.GetComponentInChildren<Text>();
 
         tutorialBG = this.transform.Find("TutorialPanel").GetComponent<Image>();
-        tutorialTxt = tutorialBG.GetComponentInChildren<Text>();
-
+        tutorialTxt = this.transform.Find("TutorialPanel").GetComponentInChildren<Text>();
+        Debug.Log(tutorialTxt.text);
+        tutorialTxt.enabled = true;
         iVina = dataPanel.Find("TextLogIconVina").GetComponent<Image>();
         iCarol = dataPanel.Find("TextLogIconCarol").GetComponent<Image>();
         iPablo = dataPanel.Find("TextLogIconPablo").GetComponent<Image>();
@@ -122,7 +123,7 @@ public class GUIManager : MonoBehaviour
     {
         if (input == "")
         {
-            tutorialTxt.enabled = false;
+            tutorialTxt.text = "";
             tutorialBG.enabled = false;
         }
         else

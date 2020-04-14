@@ -28,11 +28,11 @@ public class TutorialText : MonoBehaviour
     }
     private void Update()
     {
-        if (isDataLog && isReading && Input.GetButtonDown("Cancel"))
+        if (isDataLog && isReading && Input.GetButtonUp("Cancel"))
         {
             player.SetActive(true);
             isReading = false;
-            gCanvas.setText(readTag, "Press Z to Read");
+            gCanvas.setText(readTag, "Press E to Read");
             gCanvas.setText(this.tag, "");
         }
     }
@@ -40,7 +40,7 @@ public class TutorialText : MonoBehaviour
     {
         //TO DO: Set Z to Controller Input
         if (isDataLog)
-            gCanvas.setText(readTag, "Press Z to Read");
+            gCanvas.setText(readTag, "Press E to Read");
         else
             gCanvas.setText(this.tag, file.text);
     }
@@ -52,12 +52,13 @@ public class TutorialText : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (isDataLog && !isReading && Input.GetButtonDown("Read"))
+
+        if (isDataLog && !isReading && Input.GetButtonUp("ButtonPush"))
         {
             player.SetActive(false);
 
             isReading = true;
-            gCanvas.setText(readTag, "Press X to Exit");
+            gCanvas.setText(readTag, "Press R to Exit");
             gCanvas.setText(this.tag, file.text, icon.ToString());
         }
     }
