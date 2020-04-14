@@ -81,10 +81,13 @@ public class PlayerInput : MonoBehaviour
                 ghost.transform.rotation = Quaternion.LookRotation(tempMoveDirection * 1.0f);
             }
 
-        }        
-        // set animator movement speed
-        playerAnimator.SetFloat("Speed", moveDirection.magnitude);
-        ghostAnimator.SetFloat("Speed", moveDirection.magnitude);
+        }
+        else
+        {
+            tempMoveDirection = new Vector3(0, 0, 0);
+        }
+       
+      
 
         if (tempJumpVelocity != 0)
         {
@@ -127,6 +130,10 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
+        //Set animator movement speed
+        playerAnimator.SetFloat("Speed", tempMoveDirection.magnitude);
+        ghostAnimator.SetFloat("Speed", tempMoveDirection.magnitude);
+
         colorSwapScript = this.GetComponent<DimensionInput>();
 
         timeSinceReflection += Time.deltaTime;

@@ -7156,7 +7156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveObject: {fileID: 1809193435}
-  originPosition: {x: 0, y: 0, z: 0}
   destination: {x: 0, y: 0, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 0
@@ -8873,7 +8872,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveObject: {fileID: 783779075}
-  originPosition: {x: 0, y: 0, z: 0}
   destination: {x: 0, y: 0, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 0
@@ -10772,7 +10770,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveObject: {fileID: 1216095132}
-  originPosition: {x: 0, y: 0, z: 0}
   destination: {x: 0, y: 0, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 0
@@ -20811,7 +20808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveObject: {fileID: 358219503}
-  originPosition: {x: 0, y: 0, z: 0}
   destination: {x: 0, y: 0, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 0
