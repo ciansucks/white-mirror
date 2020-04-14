@@ -282,7 +282,7 @@ private void OnTriggerExit(Collider collision)
             reflectionPlane_Red = null;
             
         }
-        if(collision.gameObject.tag=="Moving_Platform")
+        if(collision.gameObject.tag=="Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
         {
             this.transform.SetParent(null, true);
         }
