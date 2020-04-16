@@ -61,9 +61,12 @@ public class PlatformSwitcher : MonoBehaviour
                 SetPlatformMaterials(r, rTrig, eRed, 2f);
 
             }
+
             foreach (GameObject o in rMoving)
             {
-                o.GetComponent<BoxCollider>().isTrigger = rTrig;
+                //moving platforms, meshcollider is color plat, boxcollider is moving plat
+                o.GetComponent<MeshCollider>().isTrigger = rTrig;
+                //o.GetComponent<BoxCollider>().isTrigger = rTrig;
                 Renderer r = o.GetComponent<Renderer>();
                 SetPlatformMaterials(r, rTrig, eRed, 2f);
 
@@ -80,7 +83,9 @@ public class PlatformSwitcher : MonoBehaviour
             }
             foreach (GameObject o in bMoving)
             {
-                o.GetComponent<BoxCollider>().isTrigger = bTrig;
+                o.GetComponent<MeshCollider>().isTrigger = bTrig;
+
+                //                o.GetComponent<BoxCollider>().isTrigger = bTrig;
                 Renderer r = o.GetComponent<Renderer>();
                 SetPlatformMaterials(r, bTrig, eBlue, 5f);
             }
