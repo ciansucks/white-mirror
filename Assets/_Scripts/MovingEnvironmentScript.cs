@@ -22,17 +22,25 @@ public class MovingEnvironmentScript : MonoBehaviour
     public float simpleMoveDistance = 3.00f;
 
     public bool isMoving = false;
+    public bool proximityActivation = false;
 
     //private Vector3 originPosition;
     private Quaternion originRotation;
     private Vector3 destinationPosition;
     private Quaternion destinationRotation;
 
+    private AudioSource buttonAudioSource;
+    private AudioSource objectAudioSource;
+
+    public AudioClip buttonSound;
+    public AudioClip objectSound;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        buttonAudioSource = GetComponent<AudioSource>();
+        objectAudioSource = moveObject.GetComponent<AudioSource>();
 
         originPosition = moveObject.transform.position;
         if (simpleX)
@@ -86,7 +94,17 @@ public class MovingEnvironmentScript : MonoBehaviour
         if (Input.GetButtonDown("ButtonPush"))
         {
             isMoving = !isMoving;
+            buttonAudioSource.PlayOneShot(buttonSound);
+            objectAudioSource.PlayOneShot(objectSound);
 
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (proximityActivation)
+        {
+            isMoving = !isMoving;
         }
     }
 
