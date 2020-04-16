@@ -62,7 +62,7 @@ public class PlayerInput : MonoBehaviour
         GameObject thePlayer = GameObject.Find("ThePlayer");
         colorSwapScript = this.GetComponent<DimensionInput>();
 
-        ghost = this.transform.Find("Ghost").gameObject;
+        //ghost = this.transform.Find("Ghost").gameObject;
 
     }
 
