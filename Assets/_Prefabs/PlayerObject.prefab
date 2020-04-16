@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 2786044112322728024}
-  ghost: {fileID: 2701117063370001326, guid: c71824f60a56d8c41b69153992765863, type: 3}
+  ghost: {fileID: 2439422853034128697}
   MoveSpeed: 0.05
   UseOffset: 1
   ghostLook: 0
@@ -825,7 +825,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2786044112152592305}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c9b4237300133324ba9d2f9ea8686881, type: 3}
