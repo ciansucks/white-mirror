@@ -104,7 +104,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2655526116283626970}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 3.297, y: -2.178, z: 8.559359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -244,7 +244,9 @@ MonoBehaviour:
   simpleZ: 0
   simpleMoveDistance: 3
   isMoving: 0
-  buttonSound: {fileID: 8300000, guid: 70677eb68eadfaf41b56c5063aef3702, type: 3}
+  proximityActivation: 0
+  objectSounds: []
+  buttonSound: {fileID: 8300000, guid: c6e9a832283de4143807c9b161e5ddaf, type: 3}
   objectSound: {fileID: 8300000, guid: 1040c5766b062d64d94a024973a88eb3, type: 3}
 --- !u!1 &5171746725759557184
 GameObject:

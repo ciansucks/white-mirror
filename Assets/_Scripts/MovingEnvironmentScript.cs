@@ -32,6 +32,8 @@ public class MovingEnvironmentScript : MonoBehaviour
     private AudioSource buttonAudioSource;
     private AudioSource objectAudioSource;
 
+    public AudioClip[] objectSounds;
+
     public AudioClip buttonSound;
     public AudioClip objectSound;
     
@@ -95,7 +97,16 @@ public class MovingEnvironmentScript : MonoBehaviour
         {
             isMoving = !isMoving;
             buttonAudioSource.PlayOneShot(buttonSound);
-            objectAudioSource.PlayOneShot(objectSound);
+
+            if (objectSounds.Length > 0)
+            {
+                objectAudioSource.clip = objectSounds[Random.Range(0, objectSounds.Length)];
+                objectAudioSource.Play();
+            }
+            else
+            {
+                objectAudioSource.PlayOneShot(objectSound);
+            }
 
         }
     }
