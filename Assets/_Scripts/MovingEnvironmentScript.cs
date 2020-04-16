@@ -102,9 +102,9 @@ public class MovingEnvironmentScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (proximityActivation)
+        if (proximityActivation && !isMoving)
         {
-            isMoving = !isMoving;
+            isMoving = true;
         }
     }
 
