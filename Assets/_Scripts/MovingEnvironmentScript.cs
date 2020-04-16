@@ -91,7 +91,7 @@ public class MovingEnvironmentScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetButtonDown("ButtonPush"))
+        if (Input.GetButtonDown("ButtonPush") && !proximityActivation)
         {
             isMoving = !isMoving;
             buttonAudioSource.PlayOneShot(buttonSound);
