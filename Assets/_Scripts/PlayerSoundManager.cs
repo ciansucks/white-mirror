@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class PlayerSoundManager : MonoBehaviour
 {
-    public static AudioClip jumpSound, landSound, reflectSound, phaseSound;
-
-
-
+    public static AudioClip jumpSound, landSound, reflectSound, phaseSoundRed, phaseSoundBlue;
+       
     // Start is called before the first frame update
     void Start()
     {
