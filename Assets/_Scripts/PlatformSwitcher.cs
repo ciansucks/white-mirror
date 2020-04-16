@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -99,14 +100,14 @@ public class PlatformSwitcher : MonoBehaviour
         Color baseCol = mats[0].color;
 
         //platform not active, make more transparent and reduce glow
-        if (trigger) 
+        if (trigger && mats.Length>1) 
         {
             baseCol.a = .1f;
             mats[1].SetColor("_EmissiveColor", newColor / scale);
 
         }
         //platform active, more opaque platform and more glow
-        else
+        else if(mats.Length>1)
         {
             baseCol.a = .75f;
             mats[1].SetColor("_EmissiveColor", newColor * scale);
