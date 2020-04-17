@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/_Scenes/MainMenu.unity
     guid: 83a5c92f87d47dd429d2004508ad3d1d
   - enabled: 1
-    path: Assets/_Scenes/Vertical Slice Scenes/VerticalSliceChunkOne.unity
-    guid: 412f1550b8cf143459538d8ba376c841
+    path: Assets/_Scenes/Level1Rebuilt.unity
+    guid: cb7dcc53f3fb2444391c806ac345f1ae
   - enabled: 1
-    path: Assets/_Scenes/Vertical Slice Scenes/VerticalSliceChunkTwo.unity
-    guid: b4e709f480eed2c4f99a4b573a616acd
+    path: Assets/_Scenes/Level2Rebuilt.unity
+    guid: e7aeb1cc1c72aa74a9b51d912157f071
   - enabled: 1
     path: Assets/_Scenes/Vertical Slice Scenes/00WBColorSwitch.unity
     guid: 4c8853c5f3178914089dafdf3941f90d
+  - enabled: 1
+    path: Assets/_Scenes/Vertical Slice Scenes/02WBMerged.unity
+    guid: 1c024b35167ad5c4784723484d1eb872
   m_configObjects: {}
