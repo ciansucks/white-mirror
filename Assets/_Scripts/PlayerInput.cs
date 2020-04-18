@@ -148,6 +148,8 @@ public class PlayerInput : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && canJump)
             {
+              //  PlayerSoundManager.PlaySound("jump");  //Jump Sound Effect
+
                canJump = false;
 
                 timeSinceJump = 0.0f;
@@ -187,7 +189,7 @@ public class PlayerInput : MonoBehaviour
 
     void reflect(GameObject reflectionField)
     {
-
+        PlayerSoundManager.PlaySound("reflect"); //Reflection sound
         
         if (this.tag == "Player_Blue" && reflectionPlane_Blue != null)
         {
@@ -230,6 +232,8 @@ public class PlayerInput : MonoBehaviour
     private void jumpReset()
     {
         canJump = true;
+
+      //  PlayerSoundManager.PlaySound("land"); //Landing sound effect
     }
 
     private void setJumpFalse()

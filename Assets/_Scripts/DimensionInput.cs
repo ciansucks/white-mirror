@@ -55,6 +55,7 @@ public class DimensionInput : MonoBehaviour
 
             SetBackpackColor(backpackBlue);
 
+            PlayerSoundManager.PlaySound("phase_red");
           
 
             this.tag = "Player_Blue";
@@ -67,7 +68,7 @@ public class DimensionInput : MonoBehaviour
 
             SetBackpackColor(backpackRed);
 
-
+            PlayerSoundManager.PlaySound("phase_blue");
 
             this.tag = "Player_Red";
         }

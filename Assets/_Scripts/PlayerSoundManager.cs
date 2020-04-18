@@ -4,17 +4,58 @@ using UnityEngine;
 
 public class PlayerSoundManager : MonoBehaviour
 {
-    public AudioClip jumpSound, landSound, reflectSound, phaseSoundRed, phaseSoundBlue;
-       
+    [SerializeField]
+    private static AudioClip reflectSound, phaseSoundBlue, phaseSoundRed;
+
+    [SerializeField]
+    private static AudioClip[] reflectionClips;
+
+
+    private static AudioSource playerAudioSource;
     // Start is called before the first frame update
     void Start()
     {
-       // jumpSound = Resources.Load<AudioClip>;
+        // jumpSound = Resources.Load<AudioClip>;
+        reflectSound = Resources.Load<AudioClip>("_Audio/Player Sounds/phase_shift_sound");
+        phaseSoundBlue = Resources.Load<AudioClip>("_Audio/Player Sounds/dimension_shift1");
+
+        playerAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public static void PlaySound (string clip)
+    {
+        switch (clip)
+        {
+            
+            case "reflect":
+                playerAudioSource.PlayOneShot(reflectSound);
+                break;            
+            case "phase_blue":
+                playerAudioSource.PlayOneShot(phaseSoundBlue);
+                break;
+            case "phase_Red":
+                playerAudioSource.PlayOneShot(phaseSoundRed);
+                break;
+
+        }
+    }
+    
+    private static void reflect()
+    {
+        AudioClip clip = GetRandomReflectionClip();
+        playerAudioSource.PlayOneShot(clip);
+    }
+    
+    
+
+    private static AudioClip GetRandomReflectionClip()
+    {
+        return reflectionClips[UnityEngine.Random.Range(0, reflectionClips.Length)];
     }
 }
