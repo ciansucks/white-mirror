@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
 
     public bool allLogsRead = false;
 
+    public Animator transition;
+
+    public float transitionTime = 1.0f;
+
     private bool pauseGame = false;
     // Start is called before the first frame update
     void Start()
@@ -63,13 +67,22 @@ public class GameManager : MonoBehaviour
     {
         if (isLastScene)
         {
-            SceneManager.LoadScene(0);
+            StartCoroutine(LoadLevel(0));
         }
         else
         {
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+        
+        SceneManager.LoadScene(levelIndex);
     }
 
     
