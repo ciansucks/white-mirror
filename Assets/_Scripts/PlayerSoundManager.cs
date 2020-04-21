@@ -18,6 +18,7 @@ public class PlayerSoundManager : MonoBehaviour
         // jumpSound = Resources.Load<AudioClip>;
         reflectSound = Resources.Load<AudioClip>("_Audio/Player Sounds/phase_shift_sound");
         phaseSoundBlue = Resources.Load<AudioClip>("_Audio/Player Sounds/dimension_shift1");
+        phaseSoundRed = Resources.Load<AudioClip>("_Audio/Player Sounds/dimension_shiftUP");
 
         playerAudioSource = GetComponent<AudioSource>();
     }
@@ -39,7 +40,7 @@ public class PlayerSoundManager : MonoBehaviour
             case "phase_blue":
                 playerAudioSource.PlayOneShot(phaseSoundBlue);
                 break;
-            case "phase_Red":
+            case "phase_red":
                 playerAudioSource.PlayOneShot(phaseSoundRed);
                 break;
 
