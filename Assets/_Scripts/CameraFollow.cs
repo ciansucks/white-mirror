@@ -67,6 +67,10 @@ public class CameraFollow : MonoBehaviour
 
             ghostLook = !ghostLook;
         }
+        else if (!ghost.activeInHierarchy)
+        {
+            ghostLook = false;
+        }
     }
 
     private void LateUpdate()

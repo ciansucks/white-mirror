@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Vertical Slice Scenes/02WBMerged.unity
     guid: 1c024b35167ad5c4784723484d1eb872
+  - enabled: 1
+    path: Assets/_Scenes/Production Whiteboxes/Endings.unity
+    guid: 6e771eafcd218d04ea44729f514eb839
   m_configObjects: {}
