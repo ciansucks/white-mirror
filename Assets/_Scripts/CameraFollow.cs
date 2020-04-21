@@ -62,7 +62,7 @@ public class CameraFollow : MonoBehaviour
 
    void Update()
     {
-        if (Input.GetButtonDown("ToggleCamera"))
+        if (Input.GetButtonDown("ToggleCamera") && ghost.activeInHierarchy)
         {
 
             ghostLook = !ghostLook;
