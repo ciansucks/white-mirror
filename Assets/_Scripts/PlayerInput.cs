@@ -189,11 +189,11 @@ public class PlayerInput : MonoBehaviour
 
     void reflect(GameObject reflectionField)
     {
-        PlayerSoundManager.PlaySound("reflect"); //Reflection sound
+        
         
         if (this.tag == "Player_Blue" && reflectionPlane_Blue != null)
         {
-
+            PlayerSoundManager.PlaySound("reflect"); //Reflection sound
             float offset = reflectionPlane_Blue.transform.position.x - transform.position.x;
           //  Debug.Log("Offset: " + offset);
           //  Debug.Log("Blue ReflectionField Position: " + reflectionPlane_Blue.transform.position);
@@ -206,6 +206,7 @@ public class PlayerInput : MonoBehaviour
 
         else if (this.tag == "Player_Red" && reflectionPlane_Red != null)
         {
+            PlayerSoundManager.PlaySound("reflect"); //Reflection sound
             Debug.Log("Reflecting across Red Plane.");
             Debug.Log("Player Position: " + transform.position);
 
