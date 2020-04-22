@@ -20,6 +20,8 @@ TagManager:
   - DataLogText
   - Moving_Platform_Red
   - Moving_Platform_Blue
+  - Light_Red
+  - Light_Blue
   layers:
   - Default
   - TransparentFX

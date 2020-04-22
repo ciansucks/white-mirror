@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public class PlatformSwitcher : MonoBehaviour
 {
-    private GameObject[] rPlatforms, bPlatforms,rMoving,bMoving;
+    private GameObject[] rPlatforms, bPlatforms, rMoving, bMoving, rLights, bLights;
     private Color eRed, eBlue;
 
     private void Start()
@@ -22,6 +22,8 @@ public class PlatformSwitcher : MonoBehaviour
         bPlatforms = GameObject.FindGameObjectsWithTag("Platform_Blue");
         bMoving = GameObject.FindGameObjectsWithTag("Moving_Platform_Blue");
 
+        rLights = GameObject.FindGameObjectsWithTag("Light_Red");
+        bLights = GameObject.FindGameObjectsWithTag("Light_Blue");
         //get initial red glow
         Renderer r = rPlatforms[0].GetComponent<Renderer>();
         Material[] mats = r.materials;
@@ -54,6 +56,12 @@ public class PlatformSwitcher : MonoBehaviour
         //if player passes through red, set red as tangible
         if (rPlatforms[0].GetComponent<BoxCollider>().isTrigger != rTrig)
         {
+            foreach (GameObject o in rLights)
+            {
+                Renderer r = o.GetComponent<Renderer>();
+                SetPlatformMaterials(r, rTrig, eRed, 5f);
+            }
+
             foreach (GameObject o in rPlatforms)
             {
                 o.GetComponent<BoxCollider>().isTrigger = rTrig;
@@ -75,6 +83,12 @@ public class PlatformSwitcher : MonoBehaviour
         //check blue platforms
         if (bPlatforms[0].GetComponent<BoxCollider>().isTrigger != bTrig)
         {
+            foreach (GameObject o in bLights)
+            {
+                Renderer r = o.GetComponent<Renderer>();
+                SetPlatformMaterials(r, bTrig, eBlue, 5f);
+            }
+
             foreach (GameObject o in bPlatforms)
             {
                 o.GetComponent<BoxCollider>().isTrigger = bTrig;
@@ -105,14 +119,14 @@ public class PlatformSwitcher : MonoBehaviour
         Color baseCol = mats[0].color;
 
         //platform not active, make more transparent and reduce glow
-        if (trigger && mats.Length>1) 
+        if (trigger && mats.Length > 1)
         {
             baseCol.a = .1f;
             mats[1].SetColor("_EmissiveColor", newColor / scale);
 
         }
         //platform active, more opaque platform and more glow
-        else if(mats.Length>1)
+        else if (mats.Length > 1)
         {
             baseCol.a = .75f;
             mats[1].SetColor("_EmissiveColor", newColor * scale);

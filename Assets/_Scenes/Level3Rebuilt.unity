@@ -777,6 +777,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLastScene: 0
   allLogsRead: 0
+  transition: {fileID: 0}
+  transitionTime: 1
 --- !u!4 &184990167
 Transform:
   m_ObjectHideFlags: 0
@@ -804,7 +806,7 @@ GameObject:
   - component: {fileID: 201468458}
   m_Layer: 0
   m_Name: cian_platformemitter_bakedHDA (2)
-  m_TagString: Untagged
+  m_TagString: Light_Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1375,82 +1377,6 @@ Transform:
   m_Father: {fileID: 1649429270}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &269738198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.29
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.04
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!1001 &294570550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3503,6 +3429,82 @@ Transform:
   m_Father: {fileID: 1388601142}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &782457447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.29
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.04
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1 &786450610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4097,7 +4099,7 @@ GameObject:
   - component: {fileID: 869374842}
   m_Layer: 0
   m_Name: cian_platformemitter_bakedHDA (1)
-  m_TagString: Untagged
+  m_TagString: Light_Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5731,7 +5733,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: e6ef9a40c7eae5d4c9c1655a982e8b63,
         type: 3}
       propertyPath: m_TagString
-      value: Moving_Platform_Blue
+      value: Platform_Blue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6ef9a40c7eae5d4c9c1655a982e8b63, type: 3}
@@ -6607,7 +6609,7 @@ GameObject:
   - component: {fileID: 1388150950}
   m_Layer: 0
   m_Name: cian_platformemitter_bakedHDA
-  m_TagString: Untagged
+  m_TagString: Light_Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6773,7 +6775,7 @@ GameObject:
   - component: {fileID: 1390379196}
   m_Layer: 0
   m_Name: cian_platformemitter_bakedHDA
-  m_TagString: Untagged
+  m_TagString: Light_Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8482,6 +8484,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 479684100, guid: 7c59a0e9f05929f42b1f06a4ce7f5769, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 214978150612920424, guid: 7c59a0e9f05929f42b1f06a4ce7f5769,
         type: 3}
       propertyPath: m_Name
@@ -8750,7 +8756,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: e6ef9a40c7eae5d4c9c1655a982e8b63,
         type: 3}
       propertyPath: m_TagString
-      value: Moving_Platform_Blue
+      value: Platform_Red
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6ef9a40c7eae5d4c9c1655a982e8b63, type: 3}
@@ -10330,7 +10336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1955381981, guid: 7dd811ae60673a1469abfbab0024f505, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -58.420967
+      value: -58.423756
       objectReference: {fileID: 0}
     - target: {fileID: 2429407247753060403, guid: 7dd811ae60673a1469abfbab0024f505,
         type: 3}
