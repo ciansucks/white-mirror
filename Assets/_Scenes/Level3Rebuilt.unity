@@ -876,7 +876,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLastScene: 0
   allLogsRead: 0
+  defaultTransition: {fileID: 0}
   transition: {fileID: 0}
+  whiteTransition: {fileID: 0}
+  transitionWhite: {fileID: 0}
   transitionTime: 1
 --- !u!4 &184990167
 Transform:
@@ -1791,6 +1794,82 @@ Transform:
   m_Father: {fileID: 1388601142}
   m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: -90.00001}
+--- !u!114 &407005052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.29
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.04
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1 &430886913
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,7 +7369,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh66186
+  m_Name: pb_Mesh125406
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8550,82 +8629,6 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 3154355636692611506}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1818888771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.29
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.04
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!1001 &1832162597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8645,7 +8648,7 @@ PrefabInstance:
     - target: {fileID: 214978150612920425, guid: 7c59a0e9f05929f42b1f06a4ce7f5769,
         type: 3}
       propertyPath: isLastScene
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 214978150612920426, guid: 7c59a0e9f05929f42b1f06a4ce7f5769,
         type: 3}
@@ -9949,10 +9952,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Transition
       objectReference: {fileID: 0}
+    - target: {fileID: 5021090943336902043, guid: 422a02d6653ea754a8a773eaf00d6d39,
+        type: 3}
+      propertyPath: m_Size.x
+      value: -0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021090943336902043, guid: 422a02d6653ea754a8a773eaf00d6d39,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021090943336902043, guid: 422a02d6653ea754a8a773eaf00d6d39,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 5021090943336902046, guid: 422a02d6653ea754a8a773eaf00d6d39,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.5
+      value: 18.73
       objectReference: {fileID: 0}
     - target: {fileID: 5021090943336902046, guid: 422a02d6653ea754a8a773eaf00d6d39,
         type: 3}
@@ -9962,7 +9980,7 @@ PrefabInstance:
     - target: {fileID: 5021090943336902046, guid: 422a02d6653ea754a8a773eaf00d6d39,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18
+      value: 18.04
       objectReference: {fileID: 0}
     - target: {fileID: 5021090943336902046, guid: 422a02d6653ea754a8a773eaf00d6d39,
         type: 3}
@@ -10464,7 +10482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1955381981, guid: 7dd811ae60673a1469abfbab0024f505, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -58.42058
+      value: -58.420246
       objectReference: {fileID: 0}
     - target: {fileID: 2429407247753060403, guid: 7dd811ae60673a1469abfbab0024f505,
         type: 3}

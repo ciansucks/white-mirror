@@ -139,7 +139,11 @@ public class PlayerInput : MonoBehaviour
         timeSinceReflection += Time.deltaTime;
         timeSinceJump += Time.deltaTime;
         //Start of movement inputs
-        
+
+        if (Input.anyKeyDown)
+        {
+            Debug.Log(Input.inputString);
+        }
         if (characterController.isGrounded)
         {
 
@@ -169,7 +173,7 @@ public class PlayerInput : MonoBehaviour
         {
             moveDirection.x = Input.GetAxis("Horizontal") * speed;
             moveDirection.z = Input.GetAxis("Vertical") * speed;
-            Debug.Log(moveDirection);
+           // Debug.Log(moveDirection);
         }
 
         if (Input.GetButtonDown("Reflect"))
