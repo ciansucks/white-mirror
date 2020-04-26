@@ -265,8 +265,11 @@ public class PlayerInput : MonoBehaviour
         if(collision.gameObject.CompareTag("LevelTransition"))
         {
             Debug.Log("Moving to next scene");
-            manager.loadNextScene();
+
+            string transitionType = collision.gameObject.GetComponent<LevelTransitionData>().levelTransitionType;
+            manager.loadNextScene(transitionType);
         }
+        
 
         if (collision.gameObject.tag == "Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
         {

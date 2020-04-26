@@ -11,7 +11,13 @@ public class GameManager : MonoBehaviour
 
     public bool allLogsRead = false;
 
+    public GameObject defaultTransition;
     public Animator transition;
+
+    public GameObject whiteTransition;
+    public Animator transitionWhite;
+
+
 
     public float transitionTime = 1.0f;
 
@@ -63,22 +69,44 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void loadNextScene()
+    //current transition types: fadeToBlack, fadeToWhite
+    public void loadNextScene(string transitionType)
     {
+        Debug.Log("Transition type: " + transitionType);
+
+        if (transitionType == "fadeToBlack")
+        {
+            transition.enabled = true;
+            transitionWhite.enabled = false;
+        }
+        if (transitionType == "fadeToWhite")
+        {
+            transition.enabled = false;
+            transitionWhite.enabled = true;
+        }
+
         if (isLastScene)
         {
-            StartCoroutine(LoadLevel(0));
+            StartCoroutine(LoadLevel(0, transitionType));
         }
         else
         {
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1, transitionType));
 
         }
     }
 
-    IEnumerator LoadLevel(int levelIndex)
+    IEnumerator LoadLevel(int levelIndex, string transitionType)
     {
-        transition.SetTrigger("Start");
+        if(transitionType == "fadeToBlack")
+        {
+            transition.SetTrigger("Start");
+        }
+        else if(transitionType == "fadeToWhite")
+        {
+            
+            transitionWhite.SetTrigger("Start");
+        }
 
         yield return new WaitForSeconds(transitionTime);
         
