@@ -21,7 +21,10 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: Event Jumping has a time (0.526899) outside the clip's
+      valid range (0.000000..0.175000). It will never be firedEvent Landing has a
+      time (2.497890) outside the clip's valid range (0.000000..0.175000). It will
+      never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
