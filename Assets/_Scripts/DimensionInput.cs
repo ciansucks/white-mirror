@@ -41,7 +41,14 @@ public class DimensionInput : MonoBehaviour
     {
         colorPress = Input.GetButtonDown("DimSwitch");
         if (colorPress && !colorTrigger)
+        {
             SwitchColor();
+        }
+        else if(colorPress && colorTrigger)
+        {
+            PlayerSoundManager.PlaySound("phase_denied");
+        }
+            
     }
     /// <summary>
     /// On keypress, change the character's color and send an event to update any color platforms as needed
