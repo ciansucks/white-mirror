@@ -21,10 +21,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event Jumping has a time (0.526899) outside the clip's
-      valid range (0.000000..0.175000). It will never be firedEvent Landing has a
-      time (2.497890) outside the clip's valid range (0.000000..0.175000). It will
-      never be fired
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -41,8 +38,8 @@ ModelImporter:
       name: Jumping
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 23
-      lastFrame: 97
+      firstFrame: 0
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
