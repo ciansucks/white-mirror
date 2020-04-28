@@ -23,6 +23,8 @@ public class MovingEnvironmentScript : MonoBehaviour
 
     public bool isMoving = false;
     public bool proximityActivation = false;
+    public bool loopSound = false;
+    public bool isSecondButton = false;
 
     //private Vector3 originPosition;
     private Quaternion originRotation;
@@ -57,6 +59,14 @@ public class MovingEnvironmentScript : MonoBehaviour
         {
             destination = originPosition + new Vector3(0, 0, simpleMoveDistance);
         }
+
+
+        if (isSecondButton)
+        {
+            Vector3 tempOrigin = originPosition;
+            originPosition = destination;
+            destination = tempOrigin;
+        }
         
         
             currentDestination = destination;
@@ -89,6 +99,10 @@ public class MovingEnvironmentScript : MonoBehaviour
                 
             }
         }
+        else if (objectAudioSource.isPlaying)
+        {
+            objectAudioSource.Stop();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -98,9 +112,15 @@ public class MovingEnvironmentScript : MonoBehaviour
             isMoving = !isMoving;
             buttonAudioSource.PlayOneShot(buttonSound);
 
-            if (objectSounds.Length > 0)
+            /* if (objectSounds.Length > 0)
+             {
+                 objectAudioSource.clip = objectSounds[Random.Range(0, objectSounds.Length)];
+                 objectAudioSource.Play();
+             }*/
+
+            if (loopSound && !objectAudioSource.isPlaying)
             {
-                objectAudioSource.clip = objectSounds[Random.Range(0, objectSounds.Length)];
+                objectAudioSource.clip = objectSound;
                 objectAudioSource.Play();
             }
             else
