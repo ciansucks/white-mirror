@@ -32,4 +32,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene(6);
+    }
 }
