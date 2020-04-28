@@ -1,0 +1,1 @@
+﻿Remember, the color of your backpack matches the color you can collide with. After the last incident, the pack has a safety feature in place to prevent dimension switching inside of affected areas. 
