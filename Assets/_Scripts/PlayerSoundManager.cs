@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerSoundManager : MonoBehaviour
 {
     [SerializeField]
-    private static AudioClip reflectSound, phaseSoundBlue, phaseSoundRed, phaseDeniedSound;
+    private static AudioClip reflectSound, phaseSoundBlue, phaseSoundRed, phaseDeniedSound, logOpenSound, logCloseSound;
 
     [SerializeField]
     private static AudioClip[] reflectionClips;
@@ -20,6 +20,9 @@ public class PlayerSoundManager : MonoBehaviour
         phaseSoundBlue = Resources.Load<AudioClip>("_Audio/Player Sounds/dimension_shift1");
         phaseSoundRed = Resources.Load<AudioClip>("_Audio/Player Sounds/dimension_shiftUP");
         phaseDeniedSound = Resources.Load<AudioClip>("_Audio/Player Sounds/denied_beep");
+        logOpenSound = Resources.Load<AudioClip>("_Audio/Beeps and Machines/bip");
+        logCloseSound = Resources.Load<AudioClip>("_Audio/Beeps and Machines/bip_bass");
+
 
         playerAudioSource = GetComponent<AudioSource>();
     }
@@ -47,6 +50,13 @@ public class PlayerSoundManager : MonoBehaviour
             case "phase_denied":
                 playerAudioSource.PlayOneShot(phaseDeniedSound);
                 break;
+            case "open_log":
+                playerAudioSource.PlayOneShot(logOpenSound);
+                break;
+            case "close_log":
+                playerAudioSource.PlayOneShot(logCloseSound);
+                break;
+
 
 
         }

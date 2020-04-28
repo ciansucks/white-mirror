@@ -811,7 +811,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8342785531169370920}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -37.514, y: 4.913381, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -847,7 +847,7 @@ MonoBehaviour:
   isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 8300000, guid: c6e9a832283de4143807c9b161e5ddaf, type: 3}
-  objectSound: {fileID: 8300000, guid: 4222276d2f7fc7444b25d81e17657628, type: 3}
+  objectSound: {fileID: 8300000, guid: 60f776ab5b62020438f4548d6d6828be, type: 3}
 --- !u!65 &8342785531169370924
 BoxCollider:
   m_ObjectHideFlags: 0

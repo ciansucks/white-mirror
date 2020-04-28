@@ -37,6 +37,8 @@ public class TutorialText : MonoBehaviour
             isReading = false;
             gCanvas.setText(readTag, "Press E to Read");
             gCanvas.setText(this.tag, "");
+
+            PlayerSoundManager.PlaySound("close_log");
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -61,11 +63,14 @@ public class TutorialText : MonoBehaviour
             player.GetComponentInChildren<Animator>().enabled = false;
             player.GetComponent<PlayerInput>().enabled = false;
 
+            
             // player.SetActive(false);
 
             isReading = true;
             gCanvas.setText(readTag, "Press R to Exit");
             gCanvas.setText(this.tag, file.text, icon.ToString());
+
+            PlayerSoundManager.PlaySound("open_log");
         }
     }
 }
