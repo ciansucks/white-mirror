@@ -1,4 +1,3 @@
-﻿Welcome! This is the main area where you will test these new DPS units.
-To shift dimensions, please hit Ctrl.
-Best Regards, Carol Lewis Ph.D.
-Administrative Board Assistant & Human Resources
+﻿It seems we have reached the main testing area where DPS units were tweaked.
+
+To switch dimensions, please hit Ctrl. Your DPS's current color will match the current dimension you're attuned to.

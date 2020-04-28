@@ -1,0 +1,5 @@
+WARNING: Connection unstable...
+Unable to communicate with MK5-B servers.
+Internal emergency response systems and communications are offline. You must practice self-rescue! Your first priority should be getting yourself to safety. 
+
+Please seek out the nearest exit.

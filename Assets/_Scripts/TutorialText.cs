@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class TutorialText : MonoBehaviour
 {
+    private float speed;
     public GameObject player;
     public enum Character
     {
-        Carol,Vina,Pablo,Quack
+        Carol, Vina, Pablo, Quack
     }
     private static GUIManager gCanvas;
     private string readTag = "ReadHelpText";
@@ -20,7 +21,7 @@ public class TutorialText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = player.GetComponent<PlayerInput>().speed;
         isDataLog = this.tag == "DataLogText";
         isReading = false;
         gCanvas = canvas.GetComponent<GUIManager>();
@@ -30,7 +31,8 @@ public class TutorialText : MonoBehaviour
     {
         if (isDataLog && isReading && Input.GetButtonUp("Cancel"))
         {
-            player.SetActive(true);
+            player.GetComponent<PlayerInput>().enabled = true;
+            //           player.SetActive(true);
             isReading = false;
             gCanvas.setText(readTag, "Press E to Read");
             gCanvas.setText(this.tag, "");
@@ -55,7 +57,9 @@ public class TutorialText : MonoBehaviour
 
         if (isDataLog && !isReading && Input.GetButtonUp("ButtonPush"))
         {
-            player.SetActive(false);
+            player.GetComponent<PlayerInput>().enabled = false;
+
+            // player.SetActive(false);
 
             isReading = true;
             gCanvas.setText(readTag, "Press R to Exit");

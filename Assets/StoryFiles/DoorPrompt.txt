@@ -1,1 +1,1 @@
-Press E to open the door.
+Press E to open the door or interact.

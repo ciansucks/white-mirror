@@ -11,6 +11,7 @@ using System.IO;
 /// </summary>
 public class GUIManager : MonoBehaviour
 {
+    private bool hasTutorialUp;
     private Image colIcon, dataBG, dataIcon, readHelpBG;
     private Image iVina, iCarol, iPablo, iQuack;
 
@@ -19,12 +20,12 @@ public class GUIManager : MonoBehaviour
     public GameObject scrollContents;
     private Text tutorialTxt;
     private Transform dataPanel;
-
+    private int num;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        hasTutorialUp = false;
 
         //colIcon = this.transform.Find("ColorSwitchImage").GetComponent<Image>();
        // colTxt = colIcon.GetComponentInChildren<Text>();
@@ -38,7 +39,6 @@ public class GUIManager : MonoBehaviour
 
         tutorialBG = this.transform.Find("TutorialPanel").GetComponent<Image>();
         tutorialTxt = this.transform.Find("TutorialPanel").GetComponentInChildren<Text>();
-        Debug.Log(tutorialTxt.text);
         tutorialTxt.enabled = true;
         iVina = dataPanel.Find("TextLogIconVina").GetComponent<Image>();
         iCarol = dataPanel.Find("TextLogIconCarol").GetComponent<Image>();
@@ -46,17 +46,16 @@ public class GUIManager : MonoBehaviour
         iQuack = dataPanel.Find("TextLogIconQuack").GetComponent<Image>();
         dataIcon =iVina;
 
-       // EnableColorSwap(false);
-        SetTutorialText("");
+        tutorialTxt.text = "";
+        tutorialBG.enabled = false;
+        hasTutorialUp = false;
+
+        // SetTutorialText("");
         SetDatalogText("", "");
         SetReadHelpText("");
+        num = 0;
     }
 
-    public void EnableColorSwap(Boolean b)
-    {
-        colIcon.enabled = b;
-        colTxt.enabled = b;
-    }
     public void SetDatalogText(String input)
     {
         if (input == "")
@@ -69,6 +68,11 @@ public class GUIManager : MonoBehaviour
             iCarol.enabled = false;
             iPablo.enabled = false;
             iQuack.enabled = false;
+            if (hasTutorialUp)
+            {
+                tutorialTxt.enabled = true;
+                tutorialBG.enabled = true;
+            }
         }
         else
         {
@@ -92,15 +96,25 @@ public class GUIManager : MonoBehaviour
             iCarol.enabled = false;
             iPablo.enabled = false;
             iQuack.enabled = false;
+            if (hasTutorialUp)
+            {
+                tutorialTxt.enabled = true;
+                tutorialBG.enabled = true;
+            }
         }
         else
         {
-            dataIcon = dataPanel.Find("TextLogIcon"+character).GetComponent<Image>();
+            dataIcon = dataPanel.Find("TextLogIcon" + character).GetComponent<Image>();
             dataPanel.gameObject.SetActive(true);
             dataTxt.text = input;
             dataTxt.enabled = true;
             dataBG.enabled = true;
             dataIcon.enabled = true;
+            if (hasTutorialUp)
+            {
+                tutorialBG.enabled = false;
+                tutorialTxt.enabled = false;
+            }
         }
     }
     public void SetReadHelpText(String input)
@@ -121,17 +135,32 @@ public class GUIManager : MonoBehaviour
 
     public void SetTutorialText(String input)
     {
+        Debug.Log("Tutorial Text is: " + input);
         if (input == "")
         {
-            tutorialTxt.text = "";
-            tutorialBG.enabled = false;
+            num--;
+
+            if (num == 0)
+            {
+                tutorialTxt.text = "";
+                tutorialBG.enabled = false;
+                hasTutorialUp = false;
+            }
+
         }
         else
         {
+            //overlapping tut text
+            if(tutorialTxt.enabled == true) { 
+}
             tutorialTxt.text = input;
             tutorialTxt.enabled = true;
             tutorialBG.enabled = true;
+            hasTutorialUp = true;
+            num++;
         }
+        Debug.Log("Num is now " + num);
+
     }
     public void setText(String tag, String input)
     {
