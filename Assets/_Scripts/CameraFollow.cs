@@ -100,6 +100,9 @@ public class CameraFollow : MonoBehaviour
                 Obstruction.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             }
         }
+
+
+       
     }
 
 }
