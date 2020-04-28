@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class DimensionInput : MonoBehaviour
 {
 
-    public Image PlatformBar;
+    //public Image PlatformBar;
     public UnityEvent ColorSwapEvent;
     public string playerColor;
     private bool colorPress, colorTrigger;
@@ -26,10 +26,10 @@ public class DimensionInput : MonoBehaviour
 
     void Start()
     {
-        if (playerColor.ToUpper() == "RED")
-            PlatformBar.color = dRed;
-        else
-            PlatformBar.color = dBlue;
+        //if (playerColor.ToUpper() == "RED")
+        //    PlatformBar.color = dRed;
+        //else
+        //    PlatformBar.color = dBlue;
 
         this.tag = "Player_" + playerColor;
 
@@ -44,11 +44,11 @@ public class DimensionInput : MonoBehaviour
         {
             SwitchColor();
         }
-        else if(colorPress && colorTrigger)
+        else if (colorPress && colorTrigger)
         {
             PlayerSoundManager.PlaySound("phase_denied");
         }
-            
+
     }
     /// <summary>
     /// On keypress, change the character's color and send an event to update any color platforms as needed
@@ -56,20 +56,20 @@ public class DimensionInput : MonoBehaviour
     private void SwitchColor()
     {
 
-        if (PlatformBar.color == dRed)
+        if (this.tag == "Player_Red")
         {
-            PlatformBar.color = dBlue;
+          //  PlatformBar.color = dBlue;
 
             SetBackpackColor(backpackBlue);
 
             PlayerSoundManager.PlaySound("phase_red");
-          
+
 
             this.tag = "Player_Blue";
         }
         else
         {
-            PlatformBar.color = dRed;
+           // PlatformBar.color = dRed;
 
 
 

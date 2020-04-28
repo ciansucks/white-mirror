@@ -24,16 +24,22 @@ public class PlatformSwitcher : MonoBehaviour
 
         rLights = GameObject.FindGameObjectsWithTag("Light_Red");
         bLights = GameObject.FindGameObjectsWithTag("Light_Blue");
-        //get initial red glow
-        Renderer r = rPlatforms[0].GetComponent<Renderer>();
-        Material[] mats = r.materials;
-        eRed = mats[1].GetColor("_EmissiveColor") * 2;
 
-        //get initial blue glow
-        Renderer b = bPlatforms[0].GetComponent<Renderer>();
-        mats = b.materials;
-        eBlue = mats[1].GetColor("_EmissiveColor") * 2;
-
+        if (rPlatforms.Length > 0)
+        {
+            //get initial red glow
+            Renderer r = rPlatforms[0].GetComponent<Renderer>();
+            Material[] mats = r.materials;
+            eRed = mats[1].GetColor("_EmissiveColor") * 2;
+        }
+        if (bPlatforms.Length > 0)
+        {
+            //get initial blue glow
+            Renderer b = bPlatforms[0].GetComponent<Renderer>();
+            Material[] mats =  b.materials;
+            eBlue = mats[1].GetColor("_EmissiveColor") * 2;
+        }
+        if(rPlatforms.Length > 0)
         SetActivePlatforms();
     }
     /// <summary>

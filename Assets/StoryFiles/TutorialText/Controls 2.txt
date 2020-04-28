@@ -1,4 +1,4 @@
 ﻿Welcome! This is the main area where you will test these new DPS units.
-SPACE is used to jump. To shift dimensions, please hit G.
+To shift dimensions, please hit Ctrl.
 Best Regards, Carol Lewis Ph.D.
 Administrative Board Assistant & Human Resources

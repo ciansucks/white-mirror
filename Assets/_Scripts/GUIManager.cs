@@ -26,8 +26,8 @@ public class GUIManager : MonoBehaviour
     {
        
 
-        colIcon = this.transform.Find("ColorSwitchImage").GetComponent<Image>();
-        colTxt = colIcon.GetComponentInChildren<Text>();
+        //colIcon = this.transform.Find("ColorSwitchImage").GetComponent<Image>();
+       // colTxt = colIcon.GetComponentInChildren<Text>();
 
         dataPanel = this.transform.Find("DataLogPanel");
         dataBG = dataPanel.Find("TextLogBG").GetComponent<Image>();
@@ -46,7 +46,7 @@ public class GUIManager : MonoBehaviour
         iQuack = dataPanel.Find("TextLogIconQuack").GetComponent<Image>();
         dataIcon =iVina;
 
-        EnableColorSwap(false);
+       // EnableColorSwap(false);
         SetTutorialText("");
         SetDatalogText("", "");
         SetReadHelpText("");
