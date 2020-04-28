@@ -31,6 +31,7 @@ public class TutorialText : MonoBehaviour
     {
         if (isDataLog && isReading && Input.GetButtonUp("Cancel"))
         {
+            player.GetComponentInChildren<Animator>().enabled = true;
             player.GetComponent<PlayerInput>().enabled = true;
             //           player.SetActive(true);
             isReading = false;
@@ -57,6 +58,7 @@ public class TutorialText : MonoBehaviour
 
         if (isDataLog && !isReading && Input.GetButtonUp("ButtonPush"))
         {
+            player.GetComponentInChildren<Animator>().enabled = false;
             player.GetComponent<PlayerInput>().enabled = false;
 
             // player.SetActive(false);
