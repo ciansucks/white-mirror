@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System;
+
 public class DimensionInput : MonoBehaviour
 {
-
-    //public Image PlatformBar;
     public UnityEvent ColorSwapEvent;
-    public string playerColor;
-    private bool colorPress, colorTrigger;
-    private Color dRed = new Color32(255, 85, 85, 80);
-    private Color dBlue = new Color32(84, 255, 255, 80);
+    public PlayerColor col;
+    public enum PlayerColor
+    {
+        Red, Blue
+    }
+    private bool colorPress, inColorCollider;
+
     private GameObject currTrigger = null;
-
-
 
     private Color backpackRed = new Color32(255, 85, 85, 255);
     private Color backpackBlue = new Color32(84, 255, 255, 255);
@@ -26,25 +27,20 @@ public class DimensionInput : MonoBehaviour
 
     void Start()
     {
-        //if (playerColor.ToUpper() == "RED")
-        //    PlatformBar.color = dRed;
-        //else
-        //    PlatformBar.color = dBlue;
 
-        this.tag = "Player_" + playerColor;
-
-        colorTrigger = false;
+        this.tag = "Player_" + col.ToString();
+        inColorCollider = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         colorPress = Input.GetButtonDown("DimSwitch");
-        if (colorPress && !colorTrigger)
+        if (colorPress && !inColorCollider)
         {
             SwitchColor();
         }
-        else if (colorPress && colorTrigger)
+        else if (colorPress && inColorCollider)
         {
             PlayerSoundManager.PlaySound("phase_denied");
         }
@@ -58,23 +54,14 @@ public class DimensionInput : MonoBehaviour
 
         if (this.tag == "Player_Red")
         {
-          //  PlatformBar.color = dBlue;
-
             SetBackpackColor(backpackBlue);
-
             PlayerSoundManager.PlaySound("phase_red");
-
 
             this.tag = "Player_Blue";
         }
         else
         {
-           // PlatformBar.color = dRed;
-
-
-
             SetBackpackColor(backpackRed);
-
             PlayerSoundManager.PlaySound("phase_blue");
 
             this.tag = "Player_Red";
@@ -90,7 +77,7 @@ public class DimensionInput : MonoBehaviour
             if (currTrigger == null)//if not already in another trigger box, set the current Trigger to this      
                 currTrigger = other.gameObject;
 
-            colorTrigger = true;
+            inColorCollider = true;
         }
     }
 
@@ -102,7 +89,7 @@ public class DimensionInput : MonoBehaviour
             //This case should only occur in "Jello" levels with a larger trigger with smaller triggers nestled inside.
             if (currTrigger.Equals(other.gameObject))
             {
-                colorTrigger = false;
+                inColorCollider = false;
                 currTrigger = null;
             }
         }

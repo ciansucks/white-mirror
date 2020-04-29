@@ -28,19 +28,17 @@ public class GUIManager : MonoBehaviour
         
         hasTutorialUp = false;
 
-        //colIcon = this.transform.Find("ColorSwitchImage").GetComponent<Image>();
-       // colTxt = colIcon.GetComponentInChildren<Text>();
-
         dataPanel = this.transform.Find("DataLogPanel");
         dataBG = dataPanel.Find("TextLogBG").GetComponent<Image>();
-        // dataTxt = dataBG.GetComponentInChildren<Text>();
         dataTxt = scrollContents.GetComponent<Text>();
+
         readHelpBG = this.transform.Find("ReadIcon").GetComponent<Image>();
         readHelpTxt = readHelpBG.GetComponentInChildren<Text>();
 
         tutorialBG = this.transform.Find("TutorialPanel").GetComponent<Image>();
         tutorialTxt = this.transform.Find("TutorialPanel").GetComponentInChildren<Text>();
         tutorialTxt.enabled = true;
+
         iVina = dataPanel.Find("TextLogIconVina").GetComponent<Image>();
         iCarol = dataPanel.Find("TextLogIconCarol").GetComponent<Image>();
         iPablo = dataPanel.Find("TextLogIconPablo").GetComponent<Image>();
@@ -160,7 +158,7 @@ public class GUIManager : MonoBehaviour
             hasTutorialUp = true;
             num++;
         }
-       // Debug.Log("Num is now " + num);
+        Debug.Log("Num is now " + num);
 
     }
     public void setText(String tag, String input)

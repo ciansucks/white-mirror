@@ -60,7 +60,7 @@ public class PlatformSwitcher : MonoBehaviour
 
 
         //if player passes through red, set red as tangible
-        if (rPlatforms[0].GetComponent<BoxCollider>().isTrigger != rTrig)
+        if (rPlatforms.Length>0 && rPlatforms[0].GetComponent<BoxCollider>().isTrigger != rTrig)
         {
             foreach (GameObject o in rLights)
             {
@@ -87,7 +87,7 @@ public class PlatformSwitcher : MonoBehaviour
             }
         }
         //check blue platforms
-        if (bPlatforms[0].GetComponent<BoxCollider>().isTrigger != bTrig)
+        if (bPlatforms.Length > 0 && bPlatforms[0].GetComponent<BoxCollider>().isTrigger != bTrig)
         {
             foreach (GameObject o in bLights)
             {

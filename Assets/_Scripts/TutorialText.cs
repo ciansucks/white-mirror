@@ -26,7 +26,7 @@ public class TutorialText : MonoBehaviour
         isDataLog = this.tag == "DataLogText";
         isReading = false;
         gCanvas = canvas.GetComponent<GUIManager>();
-        gCanvas.setText(this.tag, "");
+        //gCanvas.setText(this.tag, "");
     }
     private void Update()
     {

@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class MovingEnvironmentScript : MonoBehaviour
 {
-    public GameObject player;
     public GameObject moveObject;
 
     private Vector3 originPosition;
     public Vector3 destination;
-
-
 
     private Vector3 currentDestination;
     public GameObject destinationPoint;
@@ -220,20 +217,10 @@ public class MovingEnvironmentScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Player entered platform");
-        //player.transform.parent = moveObject.transform;
         if (proximityActivation && !isLerping)
         {
             StartLerping();
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        //if (this.tag == "Moving_Platform")
-        //    player.transform.parent = null;
-
-    }
-
 }
 

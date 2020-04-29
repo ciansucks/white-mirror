@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public GameObject parent;
+    private GameObject parent;
     public GameManager manager;
 
     public GameObject reflectionPlane;
     public GameObject reflectionPlane_Blue;
     public GameObject reflectionPlane_Red;
-
-    public string playerColor;
 
     public float ghostHeightOffset = -0.58f;
 
@@ -52,7 +50,7 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        parent = this.transform.parent.gameObject;
         characterController = GetComponent<CharacterController>();
         colorSwapScript = this.GetComponent<DimensionInput>();
 
@@ -270,18 +268,9 @@ public class PlayerInput : MonoBehaviour
         if (collision.gameObject.tag == "Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
         {
            parent.transform.SetParent(collision.gameObject.transform, true);
-           //this.transform.SetParent(collision.gameObject.transform, true);
         }
 
     }
-
-    private void OnTriggerStay(Collider collision)
-    {
-        
-
-        //this.transform.parent = other.gameObject.transform; //Change "myPlayer" to your player
-    }
-
 
     private void OnTriggerExit(Collider collision)
     {
@@ -301,8 +290,6 @@ public class PlayerInput : MonoBehaviour
         if(collision.gameObject.tag=="Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
         {
            parent.transform.SetParent(null, true);
-
-         //   this.transform.SetParent(null, true);
         }
     }
 }
