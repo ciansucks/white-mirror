@@ -2408,6 +2408,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfe7f0457af9638468735d38a101e60b, type: 3}
+--- !u!114 &312699751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.29
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.04
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1001 &327994973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8096,82 +8172,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 108
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1174194341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.29
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.04
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!1 &1174658247
 GameObject:
   m_ObjectHideFlags: 0
@@ -13509,6 +13509,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1874573143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874573141}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39, y: 0.2, z: 0.33}
+  m_Center: {x: 0, y: 0.03, z: 0.000012002884}
 --- !u!1 &1878252141
 GameObject:
   m_ObjectHideFlags: 0
@@ -15838,11 +15851,11 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 0
-  moveSpeed: 10
+  moveSpeed: 20
   simpleX: 0
   simpleY: 0
   simpleZ: 1
-  simpleMoveDistance: 4
+  simpleMoveDistance: 2
   isMoving: 0
   proximityActivation: 0
   loopSound: 0
@@ -15850,6 +15863,8 @@ MonoBehaviour:
   objectSounds: []
   buttonSound: {fileID: 8300000, guid: c6e9a832283de4143807c9b161e5ddaf, type: 3}
   objectSound: {fileID: 8300000, guid: aae30c42403482e4f9f4a261a620cad9, type: 3}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!64 &877308184993060673
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15940,7 +15955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877308184993060733}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -31.24, y: 4.413381, z: -5.674366}
+  m_LocalPosition: {x: -31.5, y: 4.413381, z: -5.674366}
   m_LocalScale: {x: 0.5000005, y: 1, z: 1}
   m_Children:
   - {fileID: 1558726701}
@@ -16382,6 +16397,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4029575831100178651, guid: 7811032953e425541a48e9935f82c3a0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35154003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029575831100178651, guid: 7811032953e425541a48e9935f82c3a0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35154003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029575831100178651, guid: 7811032953e425541a48e9935f82c3a0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35154003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7811032953e425541a48e9935f82c3a0, type: 3}
 --- !u!1001 &8342785530867484162
@@ -16411,6 +16441,11 @@ PrefabInstance:
       propertyPath: moveObject
       value: 
       objectReference: {fileID: 4749387628394400991}
+    - target: {fileID: 8342785531169370921, guid: 6679cb3492d84b74b879921cafd5cfc2,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8342785531169370926, guid: 6679cb3492d84b74b879921cafd5cfc2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16553,5 +16588,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1500}
+  m_Size: {x: 1, y: 1, z: 1335}
   m_Center: {x: 0, y: 0, z: 0}

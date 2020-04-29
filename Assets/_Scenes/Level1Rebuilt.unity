@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00009271348, g: 0.00009271348, b: 0.00009271348,
+  m_IndirectSpecularColor: {r: 0.000092638256, g: 0.000092638256, b: 0.000092638256,
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -4369,6 +4369,82 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1147577131}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &473463908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.29
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.04
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1 &493787520
 GameObject:
   m_ObjectHideFlags: 0
@@ -5198,6 +5274,16 @@ PrefabInstance:
       propertyPath: moveObject
       value: 
       objectReference: {fileID: 1899815266}
+    - target: {fileID: 6339871974863824728, guid: c1c5b5f04d669364c87e4aec77d93db6,
+        type: 3}
+      propertyPath: simpleMoveDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339871974863824728, guid: c1c5b5f04d669364c87e4aec77d93db6,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1c5b5f04d669364c87e4aec77d93db6, type: 3}
 --- !u!1001 &560697067
@@ -9284,7 +9370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: bf17333ef5c929d4c8973a7f1d55306b, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 878826354}
+  m_SkySettings: {fileID: 473463908}
   m_SkySettingsFromProfile: {fileID: -6622245702143567072, guid: bf17333ef5c929d4c8973a7f1d55306b,
     type: 2}
 --- !u!114 &858433261
@@ -9428,82 +9514,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &878826354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.29
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.04
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!1001 &885338822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13557,6 +13567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ElevatorPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 121795130078212808, guid: 7811032953e425541a48e9935f82c3a0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Moving_Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4029575831100178651, guid: 7811032953e425541a48e9935f82c3a0,
         type: 3}
@@ -17614,6 +17629,11 @@ PrefabInstance:
       propertyPath: objectSound
       value: 
       objectReference: {fileID: 8300000, guid: 60f776ab5b62020438f4548d6d6828be, type: 3}
+    - target: {fileID: 8342785531169370921, guid: 6679cb3492d84b74b879921cafd5cfc2,
+        type: 3}
+      propertyPath: timeTakenDuringLerp
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8342785531169370926, guid: 6679cb3492d84b74b879921cafd5cfc2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18995,7 +19015,6 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 0
-  moveSpeed: 10
   simpleX: 0
   simpleY: 1
   simpleZ: 0
@@ -19007,6 +19026,7 @@ MonoBehaviour:
   objectSounds: []
   buttonSound: {fileID: 8300000, guid: c6e9a832283de4143807c9b161e5ddaf, type: 3}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
 --- !u!82 &1840080285
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20764,7 +20784,6 @@ MonoBehaviour:
   destination: {x: 6.183289, y: -2.255, z: 9.035358}
   destinationPoint: {fileID: 0}
   isLoop: 0
-  moveSpeed: 5
   simpleX: 1
   simpleY: 0
   simpleZ: 0
@@ -20776,6 +20795,7 @@ MonoBehaviour:
   objectSounds: []
   buttonSound: {fileID: 8300000, guid: c6e9a832283de4143807c9b161e5ddaf, type: 3}
   objectSound: {fileID: 8300000, guid: 1040c5766b062d64d94a024973a88eb3, type: 3}
+  timeTakenDuringLerp: 1
 --- !u!65 &1969040194
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -226,7 +226,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27122
+  m_Name: pb_Mesh182226
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -389,7 +389,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27162
+  m_Name: pb_Mesh126122
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -678,16 +678,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!65 &85729731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -878,16 +881,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!65 &226674523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -996,7 +1002,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlatformBar
       value: 
-      objectReference: {fileID: 1798682772}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e3824918c7792b48899ea0f4415bd3f, type: 3}
 --- !u!1001 &252029859
@@ -1797,16 +1803,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!65 &310799846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2190,89 +2199,13 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348419081}
   m_CullTransparentMesh: 0
---- !u!114 &373303214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0.29
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.04
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!43 &383788816
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26838
+  m_Name: pb_Mesh181868
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2685,16 +2618,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!65 &464167276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3454,7 +3390,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh76140
+  m_Name: pb_Mesh125878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3617,7 +3553,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27206
+  m_Name: pb_Mesh182310
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3920,16 +3856,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!65 &717097519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4071,7 +4010,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27094
+  m_Name: pb_Mesh182184
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4457,7 +4396,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-7808
+  m_Name: pb_Mesh126234
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5076,16 +5015,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!65 &947965631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5254,7 +5196,7 @@ RectTransform:
   m_Children:
   - {fileID: 348419082}
   m_Father: {fileID: 1592172012}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5424,16 +5366,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!65 &1115656262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5711,16 +5656,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!1001 &1230533640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6138,7 +6086,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-7032
+  m_Name: pb_Mesh125974
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7445,16 +7393,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!65 &1508138660
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7474,7 +7425,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27148
+  m_Name: pb_Mesh126108
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7958,23 +7909,26 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 0
-  moveSpeed: 10
   simpleX: 0
   simpleY: 0
   simpleZ: 0
   simpleMoveDistance: 3
   isMoving: 0
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 1
+  distanceToMove: 10
 --- !u!43 &1543675794
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26908
+  m_Name: pb_Mesh181946
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8543,6 +8497,82 @@ MonoBehaviour:
   file: {fileID: 4900000, guid: 3a45e88e6ebeb944b91bf686635f41a9, type: 3}
   canvas: {fileID: 1801599518}
   icon: 1
+--- !u!114 &1676113093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0.29
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.04
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1001 &1679363421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8648,7 +8678,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27248
+  m_Name: pb_Mesh126210
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8941,16 +8971,19 @@ MonoBehaviour:
   destination: {x: 0, y: -22.71, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 1.5
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: -2
   isMoving: 0
   proximityActivation: 1
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 2
+  distanceToMove: 10
 --- !u!64 &1762819789
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9241,18 +9274,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1798682772 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3154355637415430438, guid: 7dd811ae60673a1469abfbab0024f505,
-    type: 3}
-  m_PrefabInstance: {fileID: 3154355636692611506}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!223 &1801599518 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 3154355637412055980, guid: 7dd811ae60673a1469abfbab0024f505,
@@ -9290,7 +9311,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27190
+  m_Name: pb_Mesh182294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10097,17 +10118,17 @@ PrefabInstance:
     - target: {fileID: 214978150612920426, guid: 7c59a0e9f05929f42b1f06a4ce7f5769,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 214978150612920426, guid: 7c59a0e9f05929f42b1f06a4ce7f5769,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 214978150612920426, guid: 7c59a0e9f05929f42b1f06a4ce7f5769,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 214978150612920426, guid: 7c59a0e9f05929f42b1f06a4ce7f5769,
         type: 3}
@@ -10263,7 +10284,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh76322
+  m_Name: pb_Mesh126058
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10458,16 +10479,19 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2
   simpleX: 1
   simpleY: 0
   simpleZ: 0
   simpleMoveDistance: 6
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 2
+  distanceToMove: 10
 --- !u!64 &1895218789
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10809,16 +10833,19 @@ MonoBehaviour:
   destination: {x: 0, y: -4.35, z: 0}
   destinationPoint: {fileID: 0}
   isLoop: 1
-  moveSpeed: 2.39
   simpleX: 0
   simpleY: 1
   simpleZ: 0
   simpleMoveDistance: 4.68
   isMoving: 1
   proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
   objectSounds: []
   buttonSound: {fileID: 0}
   objectSound: {fileID: 0}
+  timeTakenDuringLerp: 2
+  distanceToMove: 10
 --- !u!65 &1918287980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11852,7 +11879,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6870
+  m_Name: pb_Mesh125996
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12644,7 +12671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1955381981, guid: 7dd811ae60673a1469abfbab0024f505, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -58.42008
+      value: 0.000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 2429407247753060403, guid: 7dd811ae60673a1469abfbab0024f505,
         type: 3}

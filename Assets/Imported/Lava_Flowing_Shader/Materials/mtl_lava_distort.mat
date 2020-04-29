@@ -26,11 +26,11 @@ Material:
     - _LavaTex:
         m_Texture: {fileID: 2800000, guid: a79ab0244e05b4d47a9f55751783c93a, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 1.9331669, y: 1.9331669}
+        m_Offset: {x: 3.419907, y: 3.419907}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: eac6bf3e2e5f5f2468263baee60b66b4, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 1.9331669, y: 1.9331669}
+        m_Offset: {x: 3.419907, y: 3.419907}
     - _MainTex2:
         m_Texture: {fileID: 2800000, guid: bef54341b6d21864c82d47f3bed4c7db, type: 3}
         m_Scale: {x: 1, y: 1}

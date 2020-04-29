@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingEnvironmentScript : MonoBehaviour
+public class MovingScript_Old : MonoBehaviour
 {
 
     public GameObject moveObject;
@@ -15,7 +15,7 @@ public class MovingEnvironmentScript : MonoBehaviour
     private Vector3 currentDestination;
     public GameObject destinationPoint;
     public bool isLoop;
-  //  public float moveSpeed = 10.0f;
+    public float moveSpeed = 10.0f;
     public bool simpleX;
     public bool simpleY;
     public bool simpleZ;
@@ -44,17 +44,6 @@ public class MovingEnvironmentScript : MonoBehaviour
     private float startTime;
     private float journeyLength;
 
-
-    public float timeTakenDuringLerp = 1f;
-    //public float distanceToMove = 10;
-    private bool isLerping;
-
-    private Vector3 startPosition;
-    private Vector3 endPosition;
-
-    private float timeStartedLerping;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -75,40 +64,30 @@ public class MovingEnvironmentScript : MonoBehaviour
             destination = originPosition + new Vector3(0, 0, simpleMoveDistance);
         }
 
-        currentDestination = destination;
-       
+        if (isMoving)
+        {
+            startTime = Time.time;
+        }
+
         if (isSecondButton)
         {
             Vector3 tempOrigin = originPosition;
             originPosition = destination;
             destination = tempOrigin;
         }
-
-
-        if (isMoving)
-        {
-            StartLerping();
-        }
-
-    }
-
-
-
-    void StartLerping()
-    {
-        isLerping = true;
-        timeStartedLerping = Time.time;
-        startPosition = moveObject.transform.position;
-        endPosition = currentDestination;
+        
+        
+            currentDestination = destination;
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*
         if (isMoving)
         {
         
+
             // Distance moved equals elapsed time times speed..
             float distCovered = (Time.time - startTime) * moveSpeed;
 
@@ -117,7 +96,10 @@ public class MovingEnvironmentScript : MonoBehaviour
 
             // Set our position as a fraction of the distance between the markers.
             moveObject.transform.position = Vector3.Lerp(originPosition, destination, fractionOfJourney);
-            
+
+
+            /*
+             * 
             float step = moveSpeed * Time.deltaTime; // step size = speed * frame time
             moveObject.transform.position = Vector3.MoveTowards(moveObject.transform.position, currentDestination, step); // moves position a step closer to the target position
 
@@ -139,42 +121,8 @@ public class MovingEnvironmentScript : MonoBehaviour
                     }
                 
             }
-            
+            */
         }
-
-        */
-
-        if (isLerping)
-        {
-            float timeSinceStarted = Time.time - timeStartedLerping;
-            float percentageComplete = timeSinceStarted / timeTakenDuringLerp;
-
-            moveObject.transform.position = Vector3.Lerp(startPosition, endPosition, percentageComplete);
-
-            if(percentageComplete >= 1.0f)
-            {
-                
-
-                if (currentDestination == destination)
-                {
-                    currentDestination = originPosition;
-                }
-                else
-                {
-                    currentDestination = destination;
-                }
-
-                if (!isLoop)
-                {
-                    isLerping = false;
-                }
-                else
-                {
-                    StartLerping();
-                }
-            }
-        }
-
         else if (objectAudioSource.isPlaying)
         {
             objectAudioSource.Stop();
@@ -183,28 +131,21 @@ public class MovingEnvironmentScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetButtonDown("ButtonPush") && !proximityActivation && !isLerping)
+        if (Input.GetButtonDown("ButtonPush") && !proximityActivation)
         {
-
-            /*
             isMoving = !isMoving;
             
             startTime = Time.time;
             journeyLength = Vector3.Distance(originPosition, destination);
 
-            if (objectSounds.Length > 0)
+            buttonAudioSource.PlayOneShot(buttonSound);
+
+            /* if (objectSounds.Length > 0)
              {
                  objectAudioSource.clip = objectSounds[Random.Range(0, objectSounds.Length)];
                  objectAudioSource.Play();
-             }
+             }*/
 
-
-            */
-
-
-
-            StartLerping();
-            buttonAudioSource.PlayOneShot(buttonSound);
             if (loopSound && !objectAudioSource.isPlaying)
             {
                 objectAudioSource.clip = objectSound;
@@ -220,9 +161,9 @@ public class MovingEnvironmentScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (proximityActivation && !isLerping)
+        if (proximityActivation && !isMoving)
         {
-            StartLerping();
+            isMoving = true;
         }
     }
 
