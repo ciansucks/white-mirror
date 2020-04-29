@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590484365687836580}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05155211, y: 0.2739532, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2739532, z: 0}
   m_LocalScale: {x: 0.0026337556, y: 0.81825346, z: 0.35721457}
   m_Children: []
   m_Father: {fileID: 1333359291424131017}
@@ -88,8 +88,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1333359291424131017}
   - component: {fileID: 6339871974863824731}
-  - component: {fileID: 6339871974863824730}
   - component: {fileID: 6339871974863824728}
+  - component: {fileID: 6339871974863824730}
   m_Layer: 0
   m_Name: DoorButton
   m_TagString: Untagged
@@ -126,6 +126,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6339871974863824728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655526116283626970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9ff4e10873106418d5b5fa5408e42a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveObject: {fileID: 0}
+  destination: {x: 6.183289, y: -2.255, z: 9.035358}
+  destinationPoint: {fileID: 0}
+  isLoop: 0
+  simpleX: 1
+  simpleY: 0
+  simpleZ: 0
+  simpleMoveDistance: 2
+  isMoving: 0
+  proximityActivation: 0
+  loopSound: 0
+  isSecondButton: 0
+  objectSounds: []
+  buttonSound: {fileID: 8300000, guid: c6e9a832283de4143807c9b161e5ddaf, type: 3}
+  objectSound: {fileID: 8300000, guid: 1040c5766b062d64d94a024973a88eb3, type: 3}
+  timeTakenDuringLerp: 1
 --- !u!82 &6339871974863824730
 AudioSource:
   m_ObjectHideFlags: 0
@@ -222,32 +250,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6339871974863824728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2655526116283626970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac9ff4e10873106418d5b5fa5408e42a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveObject: {fileID: 0}
-  destination: {x: 6.183289, y: -2.255, z: 9.035358}
-  destinationPoint: {fileID: 0}
-  isLoop: 0
-  moveSpeed: 5
-  simpleX: 1
-  simpleY: 0
-  simpleZ: 0
-  simpleMoveDistance: 3
-  isMoving: 0
-  proximityActivation: 0
-  objectSounds: []
-  buttonSound: {fileID: 8300000, guid: c6e9a832283de4143807c9b161e5ddaf, type: 3}
-  objectSound: {fileID: 8300000, guid: 1040c5766b062d64d94a024973a88eb3, type: 3}
 --- !u!1 &5171746725759557184
 GameObject:
   m_ObjectHideFlags: 0

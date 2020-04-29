@@ -16,7 +16,7 @@ public class MovingEnvironmentScript : MonoBehaviour
     public bool simpleX;
     public bool simpleY;
     public bool simpleZ;
-    public float simpleMoveDistance = 3.00f;
+    public float simpleMoveDistance = 2.00f;
 
     private bool buttonPress = false;
     private bool inRange = false;
