@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject Main, Credits;
+    public GameObject Main, Credits,mainButtons,credButton;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ReturnToMenu();
     }
 
     // Update is called once per frame
@@ -32,14 +33,20 @@ public class MainMenu : MonoBehaviour
     public void ReturnToMenu()
     {
         Main.SetActive(true);
+        mainButtons.SetActive(true);
+
         Credits.SetActive(false);
-     //   SceneManager.LoadScene(0);
+        credButton.SetActive(false);
+
+        //   SceneManager.LoadScene(0);
     }
 
     public void LoadCredits()
     {
         Main.SetActive(false);
+        mainButtons.SetActive(false);
         Credits.SetActive(true);
+        credButton.SetActive(true);
         //SceneManager.LoadScene(6);
     }
 }
