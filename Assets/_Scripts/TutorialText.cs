@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TutorialText : MonoBehaviour
 {
     private float speed;
-    public GameObject player;
+    private GameObject player;
     public enum Character
     {
         Carol, Vina, Pablo, Quack
@@ -21,6 +21,7 @@ public class TutorialText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         speed = player.GetComponent<PlayerInput>().speed;
         isDataLog = this.tag == "DataLogText";
         isReading = false;

@@ -30,38 +30,43 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 playerPosition = Player.transform.position;
+    //    Vector3 playerPosition = Player.transform.position;
+
+    //    //  Vector3 playerPosition = Player.transform.position;
+
+    //    //  //INCORRECT LERPING
+    //    ////  transform.position = Player.transform.position + offset;
+    //    //transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, MoveSpeed);
 
 
-        transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, MoveSpeed);
+    //    /* if(Input.GetButtonUp("ToggleCamera"))
+    //     {
+    //         ghostLook = false;
+    //         transform.LookAt(playerPosition);
 
-       
-       /* if(Input.GetButtonUp("ToggleCamera"))
-        {
-            ghostLook = false;
-            transform.LookAt(playerPosition);
-           
-        }*/
+    //     }*/
 
-        
-        if (ghostLook)
-        {
 
-            Vector3 ghostPosition = ghost.transform.position;
-            Vector3 lookPosition = (playerPosition + ghostPosition) / 2;
+    //    if (ghostLook)
+    //    {
+
+    //        Vector3 ghostPosition = ghost.transform.position;
+    //        Vector3 lookPosition = (playerPosition + ghostPosition) / 2;
 
 
 
-            transform.LookAt(lookPosition);
+    //        transform.LookAt(lookPosition);
 
-        }
+    //    }
 
-        else transform.LookAt(playerPosition);
+    //    else transform.LookAt(playerPosition);
 
     }
 
    void Update()
     {
+
+
         if (Input.GetButtonDown("ToggleCamera") && ghost.activeInHierarchy)
         {
 
@@ -75,6 +80,20 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
+        //update the camera position in late update
+        //call this every frame, after Player moves in Update
+        transform.position = Vector3.Lerp(transform.position, Player.transform.position + offset, MoveSpeed);
+        Vector3 playerPosition = Player.transform.position;
+
+        if (ghostLook)
+        {
+            Vector3 ghostPosition = ghost.transform.position;
+            Vector3 lookPosition = (playerPosition + ghostPosition) / 2;
+            transform.LookAt(lookPosition);
+        }
+
+        else transform.LookAt(playerPosition);
+
         viewObstructed();
     }
 

@@ -54,8 +54,6 @@ public class PlayerInput : MonoBehaviour
     {
         
         characterController = GetComponent<CharacterController>();
-
-        GameObject thePlayer = GameObject.Find("ThePlayer");
         colorSwapScript = this.GetComponent<DimensionInput>();
 
         //ghost = this.transform.Find("Ghost").gameObject;
@@ -87,14 +85,11 @@ public class PlayerInput : MonoBehaviour
 
         if (tempJumpVelocity != 0)
         {
+            Debug.Log("Jump VElocity not 0");
             moveDirection.y = tempJumpVelocity;
         }
-        //Gravity effects
-        moveDirection.y -= gravity * Time.deltaTime;
-
-        tempJumpVelocity = 0;
-
-        characterController.Move(moveDirection * Time.deltaTime);
+              tempJumpVelocity = 0;
+  
 
         //Positioning the ghost
         if (this.tag == "Player_Blue" && reflectionPlane_Blue != null)
@@ -126,6 +121,11 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
+        //Gravity effects
+        moveDirection.y -= gravity * Time.deltaTime;
+
+        characterController.Move(moveDirection * Time.deltaTime);
+
         //Set animator movement speed
         playerAnimator.SetFloat("Speed", tempMoveDirection.magnitude);
         ghostAnimator.SetFloat("Speed", tempMoveDirection.magnitude);
@@ -145,7 +145,6 @@ public class PlayerInput : MonoBehaviour
 
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
-
             if (Input.GetButtonDown("Jump") && canJump)
             {
               //  PlayerSoundManager.PlaySound("jump");  //Jump Sound Effect
@@ -242,7 +241,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-       // Debug.Log("Entered trigger zone of " + collision.gameObject);
+       Debug.Log("Entered trigger zone of " + collision.gameObject);
         if (collision.gameObject.CompareTag("ReflectionField_Blue"))
         {
             reflectionPlane_Blue = collision.gameObject;
@@ -271,7 +270,7 @@ public class PlayerInput : MonoBehaviour
         if (collision.gameObject.tag == "Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
         {
            parent.transform.SetParent(collision.gameObject.transform, true);
-           // this.transform.SetParent(collision.gameObject.transform, true);
+           //this.transform.SetParent(collision.gameObject.transform, true);
         }
 
     }
@@ -286,7 +285,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-      //  Debug.Log("Exited trigger zone of " + collision.gameObject);
+        Debug.Log("Exited trigger zone of " + collision.gameObject);
         if (collision.gameObject.CompareTag("ReflectionField_Blue"))
         {
             ghost.SetActive(false);
@@ -301,9 +300,9 @@ public class PlayerInput : MonoBehaviour
         }
         if(collision.gameObject.tag=="Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
         {
-            parent.transform.SetParent(null, true);
+           parent.transform.SetParent(null, true);
 
-            //this.transform.SetParent(null, true);
+         //   this.transform.SetParent(null, true);
         }
     }
 }

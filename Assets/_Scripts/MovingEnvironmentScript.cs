@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class MovingEnvironmentScript : MonoBehaviour
 {
-
+    public GameObject player;
     public GameObject moveObject;
 
     private Vector3 originPosition;
     public Vector3 destination;
-    
+
 
 
     private Vector3 currentDestination;
     public GameObject destinationPoint;
     public bool isLoop;
-  //  public float moveSpeed = 10.0f;
+    //  public float moveSpeed = 10.0f;
     public bool simpleX;
     public bool simpleY;
     public bool simpleZ;
@@ -66,17 +66,17 @@ public class MovingEnvironmentScript : MonoBehaviour
         {
             destination = originPosition + new Vector3(simpleMoveDistance, 0, 0);
         }
-        else if(simpleY)
+        else if (simpleY)
         {
             destination = originPosition + new Vector3(0, simpleMoveDistance, 0);
         }
-        else if(simpleZ)
+        else if (simpleZ)
         {
             destination = originPosition + new Vector3(0, 0, simpleMoveDistance);
         }
 
         currentDestination = destination;
-       
+
         if (isSecondButton)
         {
             Vector3 tempOrigin = originPosition;
@@ -151,9 +151,9 @@ public class MovingEnvironmentScript : MonoBehaviour
 
             moveObject.transform.position = Vector3.Lerp(startPosition, endPosition, percentageComplete);
 
-            if(percentageComplete >= 1.0f)
+            if (percentageComplete >= 1.0f)
             {
-                
+
 
                 if (currentDestination == destination)
                 {
@@ -220,10 +220,19 @@ public class MovingEnvironmentScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("Player entered platform");
+        //player.transform.parent = moveObject.transform;
         if (proximityActivation && !isLerping)
         {
             StartLerping();
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //if (this.tag == "Moving_Platform")
+        //    player.transform.parent = null;
+
     }
 
 }

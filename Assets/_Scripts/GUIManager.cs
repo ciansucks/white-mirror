@@ -25,6 +25,7 @@ public class GUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         hasTutorialUp = false;
 
         //colIcon = this.transform.Find("ColorSwitchImage").GetComponent<Image>();
