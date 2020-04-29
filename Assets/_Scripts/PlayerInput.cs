@@ -22,7 +22,7 @@ public class PlayerInput : MonoBehaviour
     public float jumpCoolDown = 6.0f;
     private float timeSinceJump = 0.0f;
 
-    private float timeBetweenJumps = 1.0f;
+    private float timeBetweenJumps = 0.5f;
 
     public float reflectionCoolDown = 1.0f;
     private float timeSinceReflection = 0.0f;
@@ -232,7 +232,6 @@ public class PlayerInput : MonoBehaviour
     {
         canJump = true;
 
-      //  PlayerSoundManager.PlaySound("land"); //Landing sound effect
     }
 
     private void setJumpFalse()
