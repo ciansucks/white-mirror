@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    public GameObject parent;
     public GameManager manager;
 
 
@@ -57,6 +58,7 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         characterController = GetComponent<CharacterController>();
 
         GameObject thePlayer = GameObject.Find("ThePlayer");
@@ -277,7 +279,8 @@ public class PlayerInput : MonoBehaviour
 
         if (collision.gameObject.tag == "Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
         {
-            this.transform.SetParent(collision.gameObject.transform, true);
+            parent.transform.SetParent(collision.gameObject.transform, true);
+           // this.transform.SetParent(collision.gameObject.transform, true);
         }
 
     }
@@ -307,7 +310,9 @@ public class PlayerInput : MonoBehaviour
         }
         if(collision.gameObject.tag=="Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
         {
-            this.transform.SetParent(null, true);
+            parent.transform.SetParent(null, true);
+
+            //this.transform.SetParent(null, true);
         }
     }
 }
