@@ -3258,8 +3258,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: "\u201CNightwalker\u201D by FSM team feat. < e s c p >\r\n\u201CTake a Chance\u201D
-    by Myuu\r\n"
+  m_Text: "\"Horizons\" by Scott Buckley\n\u201CTake a Chance\u201D by Myuu\r\n"
 --- !u!1 &4440584781365948323
 GameObject:
   m_ObjectHideFlags: 0
