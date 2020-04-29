@@ -135,7 +135,7 @@ public class GUIManager : MonoBehaviour
 
     public void SetTutorialText(String input)
     {
-        Debug.Log("Tutorial Text is: " + input);
+      //  Debug.Log("Tutorial Text is: " + input);
         if (input == "")
         {
             num--;
@@ -159,7 +159,7 @@ public class GUIManager : MonoBehaviour
             hasTutorialUp = true;
             num++;
         }
-        Debug.Log("Num is now " + num);
+       // Debug.Log("Num is now " + num);
 
     }
     public void setText(String tag, String input)

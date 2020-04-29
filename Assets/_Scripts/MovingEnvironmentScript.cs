@@ -175,7 +175,7 @@ public class MovingEnvironmentScript : MonoBehaviour
             }
         }
 
-        else if (objectAudioSource.isPlaying)
+        else if (objectAudioSource != null && objectAudioSource.isPlaying)
         {
             objectAudioSource.Stop();
         }

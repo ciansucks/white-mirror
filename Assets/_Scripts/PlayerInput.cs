@@ -7,10 +7,7 @@ public class PlayerInput : MonoBehaviour
     public GameObject parent;
     public GameManager manager;
 
-
     public GameObject reflectionPlane;
-
-
     public GameObject reflectionPlane_Blue;
     public GameObject reflectionPlane_Red;
 
@@ -20,7 +17,6 @@ public class PlayerInput : MonoBehaviour
 
 
     public Animator playerAnimator;
-
     public Animator ghostAnimator;
 
     public float jumpCoolDown = 6.0f;
@@ -39,8 +35,6 @@ public class PlayerInput : MonoBehaviour
     private bool shifted = false;
 
     DimensionInput colorSwapScript;
-
-
 
     CharacterController characterController;
 
@@ -144,7 +138,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.anyKeyDown)
         {
-            Debug.Log(Input.inputString);
+            //Debug.Log(Input.inputString);
         }
         if (characterController.isGrounded)
         {
@@ -194,9 +188,7 @@ public class PlayerInput : MonoBehaviour
     }
 
     void reflect(GameObject reflectionField)
-    {
-        
-        
+    {   
         if (this.tag == "Player_Blue" && reflectionPlane_Blue != null)
         {
             PlayerSoundManager.PlaySound("reflect"); //Reflection sound
@@ -251,7 +243,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Entered trigger zone of " + collision.gameObject);
+       // Debug.Log("Entered trigger zone of " + collision.gameObject);
         if (collision.gameObject.CompareTag("ReflectionField_Blue"))
         {
             reflectionPlane_Blue = collision.gameObject;
@@ -279,7 +271,7 @@ public class PlayerInput : MonoBehaviour
 
         if (collision.gameObject.tag == "Moving_Platform" || collision.gameObject.tag == "Moving_Platform_Red" || collision.gameObject.tag == "Moving_Platform_Blue")
         {
-            parent.transform.SetParent(collision.gameObject.transform, true);
+           parent.transform.SetParent(collision.gameObject.transform, true);
            // this.transform.SetParent(collision.gameObject.transform, true);
         }
 
