@@ -11,6 +11,11 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         ReturnToMenu();
+
+        if (GlobalManager.creditsLoad)
+        {
+            LoadCredits();
+        }
     }
 
     // Update is called once per frame

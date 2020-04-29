@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
         if (isLastScene)
         {
             StartCoroutine(LoadLevel(0, transitionType));
+            GlobalManager.creditsLoad = true;
         }
         else
         {
