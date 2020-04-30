@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1870244784094764385}
   - component: {fileID: 1870244784094764399}
   - component: {fileID: 1635525289}
+  - component: {fileID: 1634147583}
   m_Layer: 0
   m_Name: Text Terminal
   m_TagString: DataLogText
@@ -67,10 +68,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f19376724ede0346942586964a18822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  file: {fileID: 4900000, guid: 4423f3ec650de4444ad22942ca6d9c6f, type: 3}
+  file: {fileID: 4900000, guid: 885c57b9b4ba538418ebf1c62b866931, type: 3}
   canvas: {fileID: 0}
-  icon: 0
+  icon: 1
+--- !u!65 &1634147583
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870244784094764397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.58, z: 0.71}
+  m_Center: {x: 0, y: 0, z: 0.22}
 --- !u!1001 &1870244782989644130
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,8 +16,10 @@ public class MovingEnvironmentScript : MonoBehaviour
     public bool simpleX;
     public bool simpleY;
     public bool simpleZ;
-    public float simpleMoveDistance = 3.00f;
+    public float simpleMoveDistance = 2.00f;
 
+    private bool buttonPress = false;
+    private bool inRange = false;
     public bool isMoving = false;
     public bool proximityActivation = false;
     public bool loopSound = false;
@@ -99,6 +101,11 @@ public class MovingEnvironmentScript : MonoBehaviour
         endPosition = currentDestination;
     }
 
+    private void Update()
+    {
+        if (!proximityActivation && !isLerping && inRange && Input.GetButtonUp("ButtonPush"))
+            PlayMotion();
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -178,27 +185,8 @@ public class MovingEnvironmentScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void PlayMotion()
     {
-        if (Input.GetButtonDown("ButtonPush") && !proximityActivation && !isLerping)
-        {
-
-            /*
-            isMoving = !isMoving;
-            
-            startTime = Time.time;
-            journeyLength = Vector3.Distance(originPosition, destination);
-
-            if (objectSounds.Length > 0)
-             {
-                 objectAudioSource.clip = objectSounds[Random.Range(0, objectSounds.Length)];
-                 objectAudioSource.Play();
-             }
-
-
-            */
-
-
 
             StartLerping();
             buttonAudioSource.PlayOneShot(buttonSound);
@@ -212,11 +200,14 @@ public class MovingEnvironmentScript : MonoBehaviour
                 objectAudioSource.PlayOneShot(objectSound);
             }
 
-        }
     }
-
+    private void OnTriggerExit(Collider other)
+    {
+        inRange = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
+        inRange = true;
         if (proximityActivation && !isLerping)
         {
             StartLerping();

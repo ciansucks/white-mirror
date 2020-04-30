@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void toggleTime()
+    public void toggleTime()
     {
         pauseGame = !pauseGame;
         if (pauseGame)
@@ -59,6 +59,16 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+    }
+
+    public void pauseTime()
+    {
+        Time.timeScale = 0;
+    }
+    
+    public void startTime()
+    {
+        Time.timeScale = 0;
     }
 
     public void retry()
@@ -88,6 +98,7 @@ public class GameManager : MonoBehaviour
         if (isLastScene)
         {
             StartCoroutine(LoadLevel(0, transitionType));
+            GlobalManager.creditsLoad = true;
         }
         else
         {

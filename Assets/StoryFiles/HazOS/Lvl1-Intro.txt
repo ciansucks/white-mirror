@@ -1,5 +1,6 @@
-Connecting...testing…Hello?
+CONNECTING...IDENTIFYING USER...Welcome, Grif.
 
-If you are reading this, your hazmat suit's biometric sensors indicate a high probability of recent unconsciousness, memory loss, and/or anterograde amnesia.
+Your HazOS biometric sensors indicate a high probability of recent unconsciousness, memory loss, and/or anterograde amnesia.
 
-Worry not, for we are here to guide you. Exercise your motor skills with WASD, then let us continue.
+PROPOSAL: Find text terminals in the laboratory. Reading these may aid in memory recovery.
+Exercise your motor skills with WASD, then continue to find these terminals and explore. 

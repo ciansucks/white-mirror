@@ -1087,6 +1087,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 214978150612920425, guid: 7c59a0e9f05929f42b1f06a4ce7f5769,
+        type: 3}
+      propertyPath: isLastScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 214978150612920426, guid: 7c59a0e9f05929f42b1f06a4ce7f5769,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1299,10 +1304,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7474927671005697619, guid: b572ee2fffcaced458d076d58f9755e4,
+    - target: {fileID: 6193840189227226461, guid: b572ee2fffcaced458d076d58f9755e4,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474927671005697619, guid: b572ee2fffcaced458d076d58f9755e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b572ee2fffcaced458d076d58f9755e4, type: 3}

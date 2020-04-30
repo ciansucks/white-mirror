@@ -5,20 +5,26 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
 
+/// <summary>
+/// The controller that allows the player to Swap Colors. Does NOT handle the color changing of the platforms, it only changes the tag.
+/// Backpack color edited here.
+/// </summary>
 public class DimensionInput : MonoBehaviour
 {
-    public UnityEvent ColorSwapEvent;
-    public PlayerColor col;
     public enum PlayerColor
     {
         Red, Blue
     }
-    private bool colorPress, inColorCollider;
 
+    public UnityEvent ColorSwapEvent;
+    public PlayerColor col;
+    private bool colorPress, inColorCollider;
     private GameObject currTrigger = null;
 
     private Color backpackRed = new Color32(255, 85, 85, 255);
     private Color backpackBlue = new Color32(84, 255, 255, 255);
+
+    //Changes the Color of the backpacks
     public GameObject playerBackpack;
     public Light backpackLight;
 
@@ -27,7 +33,6 @@ public class DimensionInput : MonoBehaviour
 
     void Start()
     {
-
         this.tag = "Player_" + col.ToString();
         inColorCollider = false;
     }

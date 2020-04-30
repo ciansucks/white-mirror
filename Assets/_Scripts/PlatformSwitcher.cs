@@ -1,5 +1,4 @@
-﻿//using Boo.Lang;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,7 +79,6 @@ public class PlatformSwitcher : MonoBehaviour
             {
                 //moving platforms, meshcollider is color plat, boxcollider is moving plat
                 o.GetComponent<MeshCollider>().isTrigger = rTrig;
-                //o.GetComponent<BoxCollider>().isTrigger = rTrig;
                 Renderer r = o.GetComponent<Renderer>();
                 SetPlatformMaterials(r, rTrig, eRed, 2f);
 
@@ -104,8 +102,6 @@ public class PlatformSwitcher : MonoBehaviour
             foreach (GameObject o in bMoving)
             {
                 o.GetComponent<MeshCollider>().isTrigger = bTrig;
-
-                //                o.GetComponent<BoxCollider>().isTrigger = bTrig;
                 Renderer r = o.GetComponent<Renderer>();
                 SetPlatformMaterials(r, bTrig, eBlue, 5f);
             }
@@ -127,7 +123,7 @@ public class PlatformSwitcher : MonoBehaviour
         //platform not active, make more transparent and reduce glow
         if (trigger && mats.Length > 1)
         {
-            baseCol.a = .1f;
+            baseCol.a = .05f;
             mats[1].SetColor("_EmissiveColor", newColor / scale);
 
         }

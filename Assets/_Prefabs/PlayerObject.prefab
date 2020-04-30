@@ -1440,7 +1440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2786044112322728024}
   m_LocalRotation: {x: -0, y: 0.6820091, z: -0, w: -0.7313437}
-  m_LocalPosition: {x: 2.74, y: -0.581043, z: -0.28}
+  m_LocalPosition: {x: 2.74, y: -0.99, z: -0.28}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 7000088033504259715}
@@ -1478,7 +1478,6 @@ MonoBehaviour:
   reflectionPlane: {fileID: 0}
   reflectionPlane_Blue: {fileID: 0}
   reflectionPlane_Red: {fileID: 0}
-  playerColor: blue
   ghostHeightOffset: -0.58
   playerAnimator: {fileID: 1130206950906086393}
   ghostAnimator: {fileID: 8722285212984404560}
@@ -1500,7 +1499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea4bb15991ce9841b5201fe5f32fdc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlatformBar: {fileID: 0}
   ColorSwapEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1515,7 +1513,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  playerColor: Blue
+  col: 0
   playerBackpack: {fileID: 2632244716180999782}
   backpackLight: {fileID: 404646178}
   ghostBackpack: {fileID: 2632244716175784169}
@@ -1835,9 +1833,12 @@ MonoBehaviour:
   jumpClips:
   - {fileID: 8300000, guid: 1048d9a84746d6a468ca3b609b460ad7, type: 3}
   - {fileID: 8300000, guid: 8b05e28932da1c64fb0a870064c6b1af, type: 3}
+  - {fileID: 8300000, guid: d0495f6e55aaf2a43956c01fb9ddeb62, type: 3}
+  - {fileID: 8300000, guid: a58569ea680430e44a97646d7e9aa28d, type: 3}
   landingClips:
   - {fileID: 8300000, guid: 22192a70726230342a92908698a4dfbd, type: 3}
-  - {fileID: 8300000, guid: 53061618e167c414b884ff6c1830b6b9, type: 3}
+  - {fileID: 8300000, guid: e363d5341cdd0c240b79fee6e123da42, type: 3}
+  - {fileID: 8300000, guid: 2134b55f462a06a4c98b1aa58e4e77e4, type: 3}
 --- !u!1001 &329343956
 PrefabInstance:
   m_ObjectHideFlags: 0
