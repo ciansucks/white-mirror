@@ -17,7 +17,7 @@ public class TutorialText : MonoBehaviour
     public TextAsset file;
     public Canvas canvas;
     public Character icon;
-    private bool isDataLog, isReading;
+    private bool isDataLog, isReading, readPressed;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +25,7 @@ public class TutorialText : MonoBehaviour
         speed = player.GetComponent<PlayerInput>().speed;
         isDataLog = this.tag == "DataLogText";
         isReading = false;
+        readPressed = false;
         gCanvas = canvas.GetComponent<GUIManager>();
         //gCanvas.setText(this.tag, "");
     }
@@ -41,6 +42,8 @@ public class TutorialText : MonoBehaviour
 
             PlayerSoundManager.PlaySound("close_log");
         }
+        if (Input.GetButtonUp("ButtonPush"))
+            readPressed = true;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -59,7 +62,7 @@ public class TutorialText : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (isDataLog && !isReading && Input.GetButtonUp("ButtonPush"))
+        if (isDataLog && !isReading && readPressed)
         {
             player.GetComponentInChildren<Animator>().enabled = false;
             player.GetComponent<PlayerInput>().enabled = false;
@@ -72,6 +75,7 @@ public class TutorialText : MonoBehaviour
             gCanvas.setText(this.tag, file.text, icon.ToString());
 
             PlayerSoundManager.PlaySound("open_log");
+            readPressed = false;
         }
     }
 }
