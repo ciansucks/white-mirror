@@ -1,3 +1,3 @@
-﻿It seems we have reached the main testing area where DPS units were tweaked.
+﻿You have entered main testing area for Dimensional Phase Shifting.
 
-To switch dimensions, please hit Ctrl. Your DPS's current color will match the current dimension you're attuned to.
+PROPOSAL: To switch dimensions press CTRL. Your DPS unit's color will match the current dimension you're attuned to.
