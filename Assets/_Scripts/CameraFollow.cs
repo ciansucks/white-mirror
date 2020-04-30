@@ -14,20 +14,13 @@ public class CameraFollow : MonoBehaviour
     public Transform Obstruction;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         if (UseOffset)
         {
             offset = transform.position - Player.transform.position;
         }
-
         Obstruction = Player.transform;
-    }
-
-    void FixedUpdate()
-    {
-        //ANGELIQUE: Code to move camera position moved to LateUpdate
     }
 
     /// <summary>
@@ -74,10 +67,8 @@ public class CameraFollow : MonoBehaviour
             if (hit.collider.gameObject.tag == "StaticEnvironment")
             {
                 Obstruction = hit.transform;
-
                 Obstruction.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
             }
-
             else
             {
                 Obstruction.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
