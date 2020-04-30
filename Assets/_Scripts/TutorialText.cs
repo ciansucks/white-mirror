@@ -18,6 +18,7 @@ public class TutorialText : MonoBehaviour
     public Canvas canvas;
     public Character icon;
     private bool isDataLog, isReading, readPressed;
+    private bool inRange;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,22 +43,30 @@ public class TutorialText : MonoBehaviour
 
             PlayerSoundManager.PlaySound("close_log");
         }
-        if (Input.GetButtonUp("ButtonPush"))
+        if (inRange && Input.GetButtonUp("ButtonPush"))
             readPressed = true;
     }
     private void OnTriggerEnter(Collider other)
     {
+
         //TO DO: Set Z to Controller Input
         if (isDataLog)
+        {
             gCanvas.setText(readTag, "Press E to Read");
+            inRange = true;
+        }
         else
             gCanvas.setText(this.tag, file.text);
     }
     private void OnTriggerExit(Collider other)
     {
         if (isDataLog)
+        {
             gCanvas.setText(readTag, "");
-        gCanvas.setText(this.tag, "");
+            inRange = false;
+        }
+        else
+            gCanvas.setText(this.tag, "");
     }
     private void OnTriggerStay(Collider other)
     {
@@ -67,7 +76,7 @@ public class TutorialText : MonoBehaviour
             player.GetComponentInChildren<Animator>().enabled = false;
             player.GetComponent<PlayerInput>().enabled = false;
 
-            
+
             // player.SetActive(false);
 
             isReading = true;
