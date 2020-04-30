@@ -24,6 +24,9 @@ public class GUIManager : MonoBehaviour
     private Image scrollHandle;
     private int num;
 
+
+    public GameManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +75,8 @@ public class GUIManager : MonoBehaviour
 
             pausePanel.gameObject.SetActive(true);
             hasPauseUp = true;
+
+            manager.toggleTime();
         }
         else if (hasPauseUp && Input.GetButtonDown("Pause"))
         {
@@ -82,6 +87,8 @@ public class GUIManager : MonoBehaviour
 
             pausePanel.gameObject.SetActive(false);
             hasPauseUp = false;
+
+            manager.toggleTime();
 
         }
     }
@@ -247,10 +254,13 @@ public class GUIManager : MonoBehaviour
         tutorialPanel.gameObject.SetActive(true);
 
         pausePanel.gameObject.SetActive(false);
+
+        manager.toggleTime();
     }
 
     public void ExitButton()
     {
+        manager.toggleTime();
         SceneManager.LoadScene(0);
 
     }

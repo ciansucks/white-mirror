@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 0.95686275}
+  m_Color: {r: 0.115744054, g: 0.14917704, b: 0.16037738, a: 0.95686275}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1370,7 +1370,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1770252363}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.3870758
+  m_Size: 0.38707578
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1807,6 +1807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollContents: {fileID: 268784193}
+  manager: {fileID: 0}
 --- !u!1 &3154355636968075906
 GameObject:
   m_ObjectHideFlags: 0
