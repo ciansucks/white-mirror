@@ -12,8 +12,9 @@ public class CameraFollow : MonoBehaviour
     public bool ghostLook = false;
 
     public Transform Obstruction;
+    private GameObject currentHit;
 
-
+    private List<GameObject> obstructed = new List<GameObject>();
     void Start()
     {
         if (UseOffset)
@@ -54,6 +55,7 @@ public class CameraFollow : MonoBehaviour
         }
 
         else transform.LookAt(playerPosition);
+        setOpaque();
 
         viewObstructed();
     }
@@ -66,17 +68,44 @@ public class CameraFollow : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "StaticEnvironment")
             {
+                currentHit = hit.collider.gameObject;
+                obstructed.Add(currentHit);
                 Obstruction = hit.transform;
                 Obstruction.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
             }
             else
             {
+                currentHit = null;
                 Obstruction.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             }
         }
 
 
 
+    }
+    void setOpaque()
+    {
+        List<GameObject> toRemove = new List<GameObject>();
+
+        foreach (GameObject o in obstructed)
+        {
+
+            if (!Physics.Raycast(transform.position, o.transform.position - transform.position, out RaycastHit hit, 4.5f))
+            {
+
+                o.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+                toRemove.Add(o);
+            }
+            //if (o.name != currentHit.name)
+            //{
+            //    o.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            //    toRemove.Add(o);
+            //}
+        }
+        foreach (GameObject r in toRemove)
+        {
+            obstructed.Remove(r);
+        }
     }
 
 }
