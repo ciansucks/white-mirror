@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class TutorialText : MonoBehaviour
 {
-    private float speed;
     private GameObject player;
     public enum Character
     {
@@ -19,16 +18,15 @@ public class TutorialText : MonoBehaviour
     public Character icon;
     private bool isDataLog, isReading, readPressed;
     private bool inRange;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
-        speed = player.GetComponent<PlayerInput>().speed;
         isDataLog = this.tag == "DataLogText";
         isReading = false;
         readPressed = false;
         gCanvas = canvas.GetComponent<GUIManager>();
-        //gCanvas.setText(this.tag, "");
     }
     private void Update()
     {
@@ -36,7 +34,6 @@ public class TutorialText : MonoBehaviour
         {
             player.GetComponentInChildren<Animator>().enabled = true;
             player.GetComponent<PlayerInput>().enabled = true;
-            //           player.SetActive(true);
             isReading = false;
             gCanvas.setText(readTag, "Press E to Read");
             gCanvas.setText(this.tag, "");
@@ -48,7 +45,6 @@ public class TutorialText : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-
         //TO DO: Set Z to Controller Input
         if (isDataLog)
         {
@@ -75,9 +71,6 @@ public class TutorialText : MonoBehaviour
         {
             player.GetComponentInChildren<Animator>().enabled = false;
             player.GetComponent<PlayerInput>().enabled = false;
-
-
-            // player.SetActive(false);
 
             isReading = true;
             gCanvas.setText(readTag, "Press R to Exit");

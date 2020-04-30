@@ -1,1 +1,2 @@
-Your ID still appears to work for the text terminals. Ah, it appears people keep on forgetting to log out of their emails...
+COMPLETED: Finding a text terminal
+PROPOSAL: Read the emails of those who forgot to sign out of their accounts

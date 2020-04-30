@@ -1,6 +1,6 @@
-Connecting...testing...Welcome, User Grif.
+CONNECTING...IDENTIFYING USER...Welcome, Grif.
 
 Your HazOS biometric sensors indicate a high probability of recent unconsciousness, memory loss, and/or anterograde amnesia.
-Suggestion: Find text terminals in the laboratory. Reading these may aid in memory recovery.
 
-Suggestion: Exercise your motor skills with WASD, then continue to find these terminals. 
+PROPOSAL: Find text terminals in the laboratory. Reading these may aid in memory recovery.
+Exercise your motor skills with WASD, then continue to find these terminals and explore. 
