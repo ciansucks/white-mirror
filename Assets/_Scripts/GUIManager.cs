@@ -121,7 +121,7 @@ public class GUIManager : MonoBehaviour
             dataBG.enabled = true;
             dataIcon.enabled = true;
             scrollHandle.enabled = true;
-
+            scrollbar.GetComponent<Scrollbar>().value = 1;
             scrollbar.gameObject.SetActive(true);
         }
     }
@@ -163,6 +163,7 @@ public class GUIManager : MonoBehaviour
             dataTxt.enabled = true;
             dataBG.enabled = true;
             scrollHandle.enabled = true;
+            scrollbar.GetComponent<Scrollbar>().value = 1;
 
             scrollbar.gameObject.SetActive(true);
             if (hasTutorialUp)
