@@ -9864,7 +9864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollContents: {fileID: 1454650429}
-  manager: {fileID: 0}
+  manager: {fileID: 1260628919}
 --- !u!1 &562763203
 GameObject:
   m_ObjectHideFlags: 0
