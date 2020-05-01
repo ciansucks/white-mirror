@@ -1483,9 +1483,9 @@ MonoBehaviour:
   ghostAnimator: {fileID: 8722285212984404560}
   jumpCoolDown: 6
   reflectionCoolDown: 0
-  speed: 6
+  speed: 5
   jumpSpeed: 10
-  gravity: 35
+  gravity: 30
   ghost: {fileID: 2439422853034128697}
 --- !u!114 &2786044112322728032
 MonoBehaviour:
