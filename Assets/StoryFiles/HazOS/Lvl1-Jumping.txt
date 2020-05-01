@@ -1,3 +1,5 @@
 According to offline maps, you are located in the basement. Proceed to the second floor via staircase. 
 
 PROPOSAL: The jump is tricky, but given the SPACE it is doable.
+
+If you need to pause and reflect, press ESC.

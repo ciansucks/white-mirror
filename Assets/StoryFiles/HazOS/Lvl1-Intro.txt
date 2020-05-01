@@ -4,4 +4,3 @@ Your HazOS biometric sensors indicate a high probability of recent unconsciousne
 
 PROPOSAL: Find text terminals in the laboratory. Reading these may aid in memory recovery.
 Exercise your motor skills with WASD, then continue to find these terminals and explore. 
-If you need to pause and reflect, press ESC.
