@@ -14,6 +14,8 @@ public class CameraFollow : MonoBehaviour
     public Transform Obstruction;
     private GameObject currentHit;
 
+    DimensionInput dimensionScript;
+
     private List<GameObject> obstructed = new List<GameObject>();
     void Start()
     {
@@ -22,6 +24,9 @@ public class CameraFollow : MonoBehaviour
             offset = transform.position - Player.transform.position;
         }
         Obstruction = Player.transform;
+
+
+        dimensionScript = Player.GetComponent<DimensionInput>();
     }
 
     /// <summary>
@@ -49,10 +54,23 @@ public class CameraFollow : MonoBehaviour
 
         if (ghostLook)//focus on plane 
         {
-            Vector3 ghostPosition = ghost.transform.position;
-            Vector3 lookPosition = (playerPosition + ghostPosition) / 2;
-            transform.LookAt(lookPosition);
+
+            if (Player.tag == "Player_Blue")
+            {
+                Vector3 ghostPosition = ghost.transform.position;
+                Vector3 lookPosition = (playerPosition + ghostPosition) / 2;
+                transform.LookAt(lookPosition);
+            }
+            else if (Player.tag == "Player_Red")
+            {
+                Vector3 ghostPosition = ghost.transform.position;
+                Vector3 lookPosition = (playerPosition + ghostPosition) / 2;
+                transform.LookAt(ghostPosition);
+            }
+            
         }
+
+       
 
         else transform.LookAt(playerPosition);
         setOpaque();
