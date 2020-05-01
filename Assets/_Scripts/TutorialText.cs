@@ -9,7 +9,7 @@ public class TutorialText : MonoBehaviour
     private GameObject player;
     public enum Character
     {
-        Carol, Vina, Pablo, Quack
+        Carol, Vina, Pablo, Quack, None
     }
     private static GUIManager gCanvas;
     private string readTag = "ReadHelpText";

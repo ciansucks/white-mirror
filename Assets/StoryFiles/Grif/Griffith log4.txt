@@ -1,0 +1,9 @@
+﻿Equalizing interior and exterior pressures: Done.
+
+Exterior conditions: Nominal.
+
+Airlock is now done cycling!
+
+You are free to exit. Please ensure that you have completed exited the facility before removing your MK5-B.
+
+Thank you!

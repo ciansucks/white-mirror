@@ -148,12 +148,20 @@ public class GUIManager : MonoBehaviour
         }
         else
         {
-            dataIcon = dataPanel.Find("TextLogIcon" + character).GetComponent<Image>();
+            if (character != "None")
+            {
+                dataIcon = dataPanel.Find("TextLogIcon" + character).GetComponent<Image>();
+                dataIcon.enabled = true;
+
+            }
+            else
+            {
+                dataIcon.enabled = false;
+            }
             dataPanel.gameObject.SetActive(true);
             dataTxt.text = input;
             dataTxt.enabled = true;
             dataBG.enabled = true;
-            dataIcon.enabled = true;
             scrollHandle.enabled = true;
 
             scrollbar.gameObject.SetActive(true);
